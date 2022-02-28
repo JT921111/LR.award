@@ -1,0 +1,2814 @@
+<html>
+  <head>
+    <title>Line Rangers 掉落物查詢器</title>
+    <link rel="icon" href="others/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <img class="bg" src="others/LR-background.png">
+    <div class="extralist">
+      <div class="extrabg"></div>
+      <div class="floaticon" title="更多資訊">
+        <div class="floaticon-button"></div>
+      </div>
+      <div class="extraitem extraitem1 unspread1"><div class="image"><img></div></div>
+      <div class="extraitem extraitem2 unspread2"><div class="image"><img></div></div>
+      <div class="extraitem extraitem3 unspread3"><div class="image"><img></div></div>
+      <div class="extraitem extraitem4 unspread4"><div class="image4"><img></div></div>
+    </div>
+    <div class="select-list">
+      <div class="mode-type">
+        <h1>關卡選擇</h1>
+        <div class="all mode selection" onclick="filterList(0)">全部選取</div>
+        <div class="main mode check selection" onclick="filterList(1)">主要關卡</div>
+        <div class="main-hard mode check selection" onclick="filterList(2)">困難模式</div>
+        <div class="special mode check selection" onclick="filterList(3)">特殊關卡</div>
+        <div class="fall mode check selection" onclick="filterList(4)">降臨關卡</div>
+        <div class="unlimit mode check selection" onclick="filterList(5)">無限之塔</div>
+      </div>
+      <div class="drop-type">
+        <h2>掉落物選擇</h2>
+        <div class="all drop selection" onclick="filterList(10)">全部取消</div>
+        <div class="ranger drop uncheck selection" onclick="filterList(11)">Rangers</div>
+        <div class="feather drop uncheck selection" onclick="filterList(12)">羽毛</div>
+        <div class="leonard drop uncheck selection" onclick="filterList(13)">李奧納德</div>
+        <div class="exp drop uncheck selection" onclick="filterList(14)">雷納德</div>
+        <div class="material drop uncheck selection" onclick="filterList(15)">進化素材</div>
+        <div class="element-material drop uncheck selection" onclick="filterList(16)">屬性寶石</div>
+        <div class="potential-material drop uncheck selection" onclick="filterList(17)">潛力素材</div>
+        <div class="prop drop uncheck selection" onclick="filterList(18)">道具</div>
+        <div class="equipment drop uncheck selection" onclick="filterList(19)">裝備</div>
+      </div>
+    </div>
+    <div class="table-container">
+      <table id="AllList" class="all-mode">
+        <tr id="header">
+          <td class="mode-name" rowspan="2">關卡名稱</td>
+          <td class="feathers" onclick="sortTable(1)" rowspan="2">羽毛消耗</td>
+          <td class="coins" onclick="sortTable(2)" rowspan="2">金幣獎勵</td>
+          <td class="dropshead" colspan="10">通關紅利</td>
+        </tr>
+        <tr>
+          <td class="drops" onclick="sortTable(3)">Rangers</td>
+          <td class="drops" onclick="sortTable(4)">羽毛</td>
+          <td class="drops" onclick="sortTable(5)">李奧納德</td>
+          <td class="drops" onclick="sortTable(6)">雷納德</td>
+          <td class="drops" onclick="sortTable(7)">進化素材</td>
+          <td class="drops" onclick="sortTable(8)">屬性寶石</td>
+          <td class="drops" onclick="sortTable(9)">潛力素材</td>
+          <td class="drops" onclick="sortTable(10)">道具</td>
+          <td class="drops" onclick="sortTable(11)">裝備</td>
+          <td class="drops" onclick="sortTable(12)">金幣<br>額外獎勵</td>
+        </tr>
+        <!-- <tr>
+          <td data-mode=""></td>
+          <td></td>
+          <td></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr> -->
+        <tr>
+          <td data-mode="0">主要關卡 1</td>
+          <td>1</td>
+          <td>3500</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">1★<br><img src="others/expLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">有</td>
+          <td data-drop="0">-</td>
+          <td>1500</td>
+        </tr>
+        <tr>
+          <td data-mode="0">主要關卡 2</td>
+          <td>1</td>
+          <td>3500</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">1★<br><img src="others/expLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">有</td>
+          <td data-drop="0">-</td>
+          <td>1505</td>
+        </tr>
+        <tr>
+          <td data-mode="0">主要關卡 3</td>
+          <td>1</td>
+          <td>3550</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">1★<br><img src="others/expLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">有</td>
+          <td data-drop="0">-</td>
+          <td>1520</td>
+        </tr>
+        <tr>
+          <td data-mode="0">主要關卡 4</td>
+          <td>1</td>
+          <td>3550</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">1★<br>2★<br><img src="others/expLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">有</td>
+          <td data-drop="0">-</td>
+          <td>1525</td>
+        </tr>
+        <tr>
+          <td data-mode="2">進化礦山 1</td>
+          <td>1</td>
+          <td>2000</td>
+          <td data-drop="2"><img src="rangers/u014e-cony-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">1★<br><img src="materials/evolve_material_ev-101.png"><img src="materials/evolve_material_ev-201.png"><img src="materials/evolve_material_ev-301.png"><br>2★<br><img src="materials/evolve_material_ev-102.png"><img src="materials/evolve_material_ev-202.png"><img src="materials/evolve_material_ev-302.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">進化礦山 2</td>
+          <td>2</td>
+          <td>6084</td>
+          <td data-drop="2"><img src="rangers/u023e-sindy-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">1★<br><img src="materials/evolve_material_ev-101.png"><img src="materials/evolve_material_ev-201.png"><img src="materials/evolve_material_ev-301.png"><br>2★<br><img src="materials/evolve_material_ev-102.png"><img src="materials/evolve_material_ev-202.png"><img src="materials/evolve_material_ev-302.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">進化礦山 3</td>
+          <td>3</td>
+          <td>15960</td>
+          <td data-drop="2"><img src="rangers/u091e-ksm-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">2★<br><img src="materials/evolve_material_ev-102.png"><img src="materials/evolve_material_ev-202.png"><img src="materials/evolve_material_ev-302.png"><br>3★<br><img src="materials/evolve_material_ev-103.png"><img src="materials/evolve_material_ev-203.png"><img src="materials/evolve_material_ev-303.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">進化礦山 4</td>
+          <td>4</td>
+          <td>28144</td>
+          <td data-drop="2"><img src="rangers/u266e-dumpy-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">2★<br><img src="materials/evolve_material_ev-102.png"><img src="materials/evolve_material_ev-202.png"><img src="materials/evolve_material_ev-302.png"><br>3★<br><img src="materials/evolve_material_ev-103.png"><img src="materials/evolve_material_ev-203.png"><img src="materials/evolve_material_ev-303.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">進化礦山 5</td>
+          <td>5</td>
+          <td>53505</td>
+          <td data-drop="1"><img src="rangers/u323e-cony-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">2★<br><img src="materials/evolve_material_ev-102.png"><img src="materials/evolve_material_ev-202.png"><img src="materials/evolve_material_ev-302.png"><br>3★<br><img src="materials/evolve_material_ev-103.png"><img src="materials/evolve_material_ev-203.png"><img src="materials/evolve_material_ev-303.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">進化礦山 6</td>
+          <td>6</td>
+          <td>61530</td>
+          <td data-drop="2"><img src="rangers/u286e-brown-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">3★<br><img src="materials/evolve_material_ev-103.png"><img src="materials/evolve_material_ev-203.png"><img src="materials/evolve_material_ev-303.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">魔法的迷途方塊 1</td>
+          <td>7</td>
+          <td>94500</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">1★<br><img src="materials/evolve_material_uv-001.png"><img src="materials/evolve_material_uv-006.png"><img src="materials/evolve_material_uv-011.png"><img src="materials/evolve_material_uv-016.png"><br><img src="materials/evolve_material_uv-021.png"><img src="materials/evolve_material_uv-026.png"><img src="materials/evolve_material_uv-031.png"><br>2★<br><img src="materials/evolve_material_uv-002.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">魔法的迷途方塊 2</td>
+          <td>7</td>
+          <td>98000</td>
+          <td data-drop="2"><img src="rangers/u020u-brown-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">1★<br><img src="materials/evolve_material_uv-001.png"><img src="materials/evolve_material_uv-006.png"><img src="materials/evolve_material_uv-011.png"><img src="materials/evolve_material_uv-016.png"><br><img src="materials/evolve_material_uv-021.png"><img src="materials/evolve_material_uv-026.png"><img src="materials/evolve_material_uv-031.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">魔法的迷途方塊 3</td>
+          <td>7</td>
+          <td>101500</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">1★<br><img src="materials/evolve_material_uv-001.png"><img src="materials/evolve_material_uv-006.png"><img src="materials/evolve_material_uv-011.png"><img src="materials/evolve_material_uv-016.png"><br><img src="materials/evolve_material_uv-021.png"><img src="materials/evolve_material_uv-026.png"><img src="materials/evolve_material_uv-031.png"><br>2★<br><img src="materials/evolve_material_uv-007.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">魔法的迷途方塊 4</td>
+          <td>8</td>
+          <td>120000</td>
+          <td data-drop="2"><img src="rangers/u302e-cony-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">2★<br><img src="materials/evolve_material_uv-002.png"><img src="materials/evolve_material_uv-007.png"><img src="materials/evolve_material_uv-012.png"><img src="materials/evolve_material_uv-017.png"><br><img src="materials/evolve_material_uv-022.png"><img src="materials/evolve_material_uv-027.png"><img src="materials/evolve_material_uv-032.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">魔法的迷途方塊 5</td>
+          <td>8</td>
+          <td>124000</td>
+          <td data-drop="2"><img src="rangers/u026u-yang-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">2★<br><img src="materials/evolve_material_uv-002.png"><img src="materials/evolve_material_uv-007.png"><img src="materials/evolve_material_uv-012.png"><img src="materials/evolve_material_uv-017.png"><br><img src="materials/evolve_material_uv-022.png"><img src="materials/evolve_material_uv-027.png"><img src="materials/evolve_material_uv-032.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">魔法的迷途方塊 6</td>
+          <td>8</td>
+          <td>128000</td>
+          <td data-drop="2"><img src="rangers/u305e-moon-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">2★<br><img src="materials/evolve_material_uv-002.png"><img src="materials/evolve_material_uv-007.png"><img src="materials/evolve_material_uv-012.png"><img src="materials/evolve_material_uv-017.png"><br><img src="materials/evolve_material_uv-022.png"><img src="materials/evolve_material_uv-027.png"><img src="materials/evolve_material_uv-032.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">不滅的骸石 1</td>
+          <td>9</td>
+          <td>148500</td>
+          <td data-drop="2"><img src="rangers/u123u-brown-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">3★<br><img src="materials/evolve_material_uv-003.png"><img src="materials/evolve_material_uv-008.png"><img src="materials/evolve_material_uv-013.png"><img src="materials/evolve_material_uv-018.png"><br><img src="materials/evolve_material_uv-023.png"><img src="materials/evolve_material_uv-028.png"><img src="materials/evolve_material_uv-033.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">不滅的骸石 2</td>
+          <td>9</td>
+          <td>153000</td>
+          <td data-drop="2"><img src="rangers/u279u-moon-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">3★<br><img src="materials/evolve_material_uv-003.png"><img src="materials/evolve_material_uv-008.png"><img src="materials/evolve_material_uv-013.png"><img src="materials/evolve_material_uv-018.png"><br><img src="materials/evolve_material_uv-023.png"><img src="materials/evolve_material_uv-028.png"><img src="materials/evolve_material_uv-033.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">不滅的骸石 3</td>
+          <td>9</td>
+          <td>157500</td>
+          <td data-drop="2"><img src="rangers/u286u-brown-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">3★<br><img src="materials/evolve_material_uv-003.png"><img src="materials/evolve_material_uv-008.png"><img src="materials/evolve_material_uv-013.png"><img src="materials/evolve_material_uv-018.png"><br><img src="materials/evolve_material_uv-023.png"><img src="materials/evolve_material_uv-028.png"><img src="materials/evolve_material_uv-033.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">不滅的骸石 4</td>
+          <td>10</td>
+          <td>180000</td>
+          <td data-drop="2"><img src="rangers/u289u-mong-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">4★<br><img src="materials/evolve_material_uv-004.png"><img src="materials/evolve_material_uv-009.png"><img src="materials/evolve_material_uv-014.png"><img src="materials/evolve_material_uv-019.png"><br><img src="materials/evolve_material_uv-024.png"><img src="materials/evolve_material_uv-029.png"><img src="materials/evolve_material_uv-034.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">不滅的骸石 5</td>
+          <td>10</td>
+          <td>185000</td>
+          <td data-drop="2"><img src="rangers/u376u-cony-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">4★<br><img src="materials/evolve_material_uv-004.png"><img src="materials/evolve_material_uv-009.png"><img src="materials/evolve_material_uv-014.png"><img src="materials/evolve_material_uv-019.png"><br><img src="materials/evolve_material_uv-024.png"><img src="materials/evolve_material_uv-029.png"><img src="materials/evolve_material_uv-034.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">不滅的骸石 6</td>
+          <td>10</td>
+          <td>190000</td>
+          <td data-drop="2"><img src="rangers/u379u-edward-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">4★<br><img src="materials/evolve_material_uv-004.png"><img src="materials/evolve_material_uv-009.png"><img src="materials/evolve_material_uv-014.png"><img src="materials/evolve_material_uv-019.png"><br><img src="materials/evolve_material_uv-024.png"><img src="materials/evolve_material_uv-029.png"><img src="materials/evolve_material_uv-034.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">鮮紅火山 1</td>
+          <td>2</td>
+          <td>6084</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">鮮紅火山 2</td>
+          <td>4</td>
+          <td>28144</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">鮮紅火山 3</td>
+          <td>6</td>
+          <td>81000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">鮮紅火山 4</td>
+          <td>8</td>
+          <td>120000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">鮮紅火山 5</td>
+          <td>10</td>
+          <td>180000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">鮮紅火山 6</td>
+          <td>12</td>
+          <td>216000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">流動冰河 1</td>
+          <td>2</td>
+          <td>6084</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">流動冰河 2</td>
+          <td>4</td>
+          <td>28144</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">流動冰河 3</td>
+          <td>6</td>
+          <td>81000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">流動冰河 4</td>
+          <td>8</td>
+          <td>120000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">流動冰河 5</td>
+          <td>10</td>
+          <td>180000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">流動冰河 6</td>
+          <td>12</td>
+          <td>216000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">盎然綠樹 1</td>
+          <td>2</td>
+          <td>6084</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">盎然綠樹 2</td>
+          <td>4</td>
+          <td>28144</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">盎然綠樹 3</td>
+          <td>6</td>
+          <td>81000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">盎然綠樹 4</td>
+          <td>8</td>
+          <td>120000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">盎然綠樹 5</td>
+          <td>10</td>
+          <td>180000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">盎然綠樹 6</td>
+          <td>12</td>
+          <td>216000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">雷納德星球 1</td>
+          <td>1</td>
+          <td>8000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">4★ 5★<br><img src="others/superLeonard.png"><br>4★ 5★<br><img src="others/extremeLeonard.png"><br></td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">1★<br><img src="materials/evolve_material_ev-101.png"><img src="materials/evolve_material_ev-201.png"><img src="materials/evolve_material_ev-301.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">雷納德星球 2</td>
+          <td>1</td>
+          <td>12168</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">5★ 6★<br><img src="others/superLeonard.png"><br>4★ 5★<br><img src="others/extremeLeonard.png"><br></td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">1★<br><img src="materials/evolve_material_ev-101.png"><img src="materials/evolve_material_ev-201.png"><img src="materials/evolve_material_ev-301.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">雷納德星球 3</td>
+          <td>2</td>
+          <td>37008</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">5★ 6★<br><img src="others/superLeonard.png"><br>5★ 6★<br><img src="others/extremeLeonard.png"><br></td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">2★<br><img src="materials/evolve_material_ev-102.png"><img src="materials/evolve_material_ev-202.png"><img src="materials/evolve_material_ev-302.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">雷納德星球 4</td>
+          <td>2</td>
+          <td>56288</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">6★ 7★<br><img src="others/superLeonard.png"><br>5★ 6★<br><img src="others/extremeLeonard.png"><br></td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">2★<br><img src="materials/evolve_material_ev-102.png"><img src="materials/evolve_material_ev-202.png"><img src="materials/evolve_material_ev-302.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">雷納德星球 5</td>
+          <td>3</td>
+          <td>128412</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">6★ 7★<br><img src="others/superLeonard.png"><br>6★ 7★<br><img src="others/extremeLeonard.png"><br></td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">3★<br><img src="materials/evolve_material_ev-103.png"><img src="materials/evolve_material_ev-203.png"><img src="materials/evolve_material_ev-303.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">雷納德星球 6</td>
+          <td>3</td>
+          <td>195288</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">7★ 8★<br><img src="others/superLeonard.png"><br>6★ 7★<br><img src="others/extremeLeonard.png"><br></td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">3★<br><img src="materials/evolve_material_ev-103.png"><img src="materials/evolve_material_ev-203.png"><img src="materials/evolve_material_ev-303.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">活動星球 1</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="2">當期合作角色</td>
+          <td data-drop="1"><img src="others/spfeather.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">3★<br>素材寶箱</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">3★ 4★<br>裝備寶箱</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">活動星球 2</td>
+          <td>5</td>
+          <td>15000</td>
+          <td data-drop="2">當期合作角色</td>
+          <td data-drop="1"><img src="others/spfeather.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">3★<br>素材寶箱</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">3★ 4★<br>裝備寶箱</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">活動星球 3</td>
+          <td>5</td>
+          <td>20000</td>
+          <td data-drop="2">當期合作角色</td>
+          <td data-drop="1"><img src="others/spfeather.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">4★ 5★<br>素材寶箱</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">3★ 4★<br>裝備寶箱</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">活動星球 4</td>
+          <td>5</td>
+          <td>25000</td>
+          <td data-drop="2">當期合作角色</td>
+          <td data-drop="1"><img src="others/spfeather.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">4★ 5★<br>素材寶箱</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">3★ 4★<br>裝備寶箱</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">活動星球 5</td>
+          <td>5</td>
+          <td>30000</td>
+          <td data-drop="2">當期合作角色</td>
+          <td data-drop="1"><img src="others/spfeather.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">4★ 5★<br>素材寶箱</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">4★ 5★<br>裝備寶箱</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="2">活動星球 6</td>
+          <td>5</td>
+          <td>35000</td>
+          <td data-drop="2">當期合作角色</td>
+          <td data-drop="1"><img src="others/spfeather.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">4★ 5★<br>素材寶箱</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">4★ 5★<br>裝備寶箱</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">受詛咒的美女的喊叫<br>非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2001e-lia-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">受詛咒的美女的喊叫<br>簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2001e-lia-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">受詛咒的美女的喊叫<br>普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2001e-lia-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">受詛咒的美女的喊叫<br>困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2001e-lia-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">受詛咒的美女的喊叫<br>非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2001e-lia-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">人魚的誘惑 非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2002e-alice-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">人魚的誘惑 簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2002e-alice-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">人魚的誘惑 普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2002e-alice-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">人魚的誘惑 困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2002e-alice-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">人魚的誘惑 非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2002e-alice-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">草原神射手 非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2003e-boss-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">草原神射手 簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2003e-boss-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">草原神射手 普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2003e-boss-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">草原神射手 困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2003e-boss-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">草原神射手 非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2003e-boss-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">喪女女王的怒氣 非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2004e-clara-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">喪女女王的怒氣 簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2004e-clara-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">喪女女王的怒氣 普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2004e-clara-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">喪女女王的怒氣 困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2004e-clara-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">喪女女王的怒氣 非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2004e-clara-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">文藝復興支持者 非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2005e-manager-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">文藝復興支持者 簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2005e-manager-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">文藝復興支持者 普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2005e-manager-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">文藝復興支持者 困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2005e-manager-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">文藝復興支持者 非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2005e-manager-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">悲劇王子 非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2006e-ham-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">悲劇王子 簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2006e-ham-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">悲劇王子 普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2006e-ham-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">悲劇王子 困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2006e-ham-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">悲劇王子 非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2006e-ham-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">美麗花園 非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2007e-luis-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">美麗花園 簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2007e-luis-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">美麗花園 普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2007e-luis-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">美麗花園 困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2007e-luis-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">美麗花園 非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2007e-luis-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">某奇異宇宙都市 非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2008e-simon-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">某奇異宇宙都市 簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2008e-simon-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">某奇異宇宙都市 普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2008e-simon-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">某奇異宇宙都市 困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2008e-simon-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">某奇異宇宙都市 非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2008e-simon-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">降雪冬國 非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2009e-cherina-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">降雪冬國 簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2009e-cherina-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">降雪冬國 普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2009e-cherina-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">降雪冬國 困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2009e-cherina-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">降雪冬國 非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2009e-cherina-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">陰森松樹林 非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2014e-sisi-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">陰森松樹林 簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2014e-sisi-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">陰森松樹林 普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2014e-sisi-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">陰森松樹林 困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2014e-sisi-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">陰森松樹林 非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2014e-sisi-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">火焰硫磺村 非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2015e-sol-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">火焰硫磺村 簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2015e-sol-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">火焰硫磺村 普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2015e-sol-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">火焰硫磺村 困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2015e-sol-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">火焰硫磺村 非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2015e-sol-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">勢如破竹的英雄 非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2018e-crush-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">勢如破竹的英雄 簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2018e-crush-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">勢如破竹的英雄 普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2018e-crush-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">勢如破竹的英雄 困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2018e-crush-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">勢如破竹的英雄 非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2018e-crush-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-901.png"><img src="element/evolve_material_uv-902.png"><img src="element/evolve_material_uv-903.png"><br><img src="element/evolve_material_uv-904.png"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">橫掃千軍的戰士 非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2019e-frankie-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">橫掃千軍的戰士 簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2019e-frankie-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">橫掃千軍的戰士 普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2019e-frankie-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">橫掃千軍的戰士 困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2019e-frankie-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">橫掃千軍的戰士 非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2019e-frankie-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-911.png"><img src="element/evolve_material_uv-912.png"><img src="element/evolve_material_uv-913.png"><br><img src="element/evolve_material_uv-914.png"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">知彼知己，百戰不殆<br>非常簡單</td>
+          <td>5</td>
+          <td>10000</td>
+          <td data-drop="1"><img src="fall/u2020e-jacob-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">知彼知己，百戰不殆<br>簡單</td>
+          <td>10</td>
+          <td>30000</td>
+          <td data-drop="1"><img src="fall/u2020e-jacob-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">知彼知己，百戰不殆<br>普通</td>
+          <td>14</td>
+          <td>70000</td>
+          <td data-drop="1"><img src="fall/u2020e-jacob-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">知彼知己，百戰不殆<br>困難</td>
+          <td>17</td>
+          <td>119000</td>
+          <td data-drop="1"><img src="fall/u2020e-jacob-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="3">知彼知己，百戰不殆<br>非常困難</td>
+          <td>20</td>
+          <td>200000</td>
+          <td data-drop="1"><img src="fall/u2020e-jacob-thum.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-906.png"><img src="element/evolve_material_uv-907.png"><img src="element/evolve_material_uv-908.png"><br><img src="element/evolve_material_uv-909.png"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 1</td>
+          <td>1</td>
+          <td>2000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>20000<br>+<br>10000<br>+<br>10000<br>+<br>10000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 2</td>
+          <td>1</td>
+          <td>2800</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>25000<br>+<br>12500<br>+<br>12500<br>+<br>12500</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 3</td>
+          <td>1</td>
+          <td>3600</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">4★ 5★<br>裝備寶箱<br>+<br>>3★ 4★<br>武器寶箱<br>+<br>3★ 4★<br>護具寶箱<br>+<br>3★ 4★<br>飾品寶箱</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 4</td>
+          <td>1</td>
+          <td>4400</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>35000<br>+<br>17500<br>+<br>17500<br>+<br>17500</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 5</td>
+          <td>1</td>
+          <td>5200</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>40000<br>+<br>20000<br>+<br>20000<br>+<br>20000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 6</td>
+          <td>2</td>
+          <td>6000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-904.png"><br>+<br><img src="element/evolve_material_uv-904.png"><br>+<br><img src="element/evolve_material_uv-904.png"><br>+<br><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 7</td>
+          <td>2</td>
+          <td>6800</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>50000<br>+<br>25000<br>+<br>25000<br>+<br>25000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 8</td>
+          <td>2</td>
+          <td>7600</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>55000<br>+<br>27500<br>+<br>27500<br>+<br>27500</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 9</td>
+          <td>2</td>
+          <td>8400</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>60000<br>+<br>30000<br>+<br>30000<br>+<br>30000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 10</td>
+          <td>2</td>
+          <td>9200</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">5★ 6★<br>裝備寶箱<br>+<br>4★ 5★<br>武器寶箱<br>+<br>4★ 5★<br>護具寶箱<br>+<br>4★ 5★<br>飾品寶箱</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 11</td>
+          <td>3</td>
+          <td>10000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>70000<br>+<br>35000<br>+<br>35000<br>+<br>35000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 12</td>
+          <td>3</td>
+          <td>10800</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>75000<br>+<br>37500<br>+<br>37500<br>+<br>37500</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 13</td>
+          <td>3</td>
+          <td>11600</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-909.png"><br>+<br><img src="element/evolve_material_uv-909.png"><br>+<br><img src="element/evolve_material_uv-909.png"><br>+<br><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 14</td>
+          <td>3</td>
+          <td>12400</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>85000<br>+<br>42500<br>+<br>42500<br>+<br>42500</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 15</td>
+          <td>3</td>
+          <td>13200</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>90000<br>+<br>45000<br>+<br>45000<br>+<br>45000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 16</td>
+          <td>4</td>
+          <td>14000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="others/spfeather.png"><br>+<br><img src="others/feather.png"><br>+<br><img src="others/feather.png"><br>+<br><img src="others/feather.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 17</td>
+          <td>4</td>
+          <td>14800</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>100000<br>+<br>50000<br>+<br>50000<br>+<br>50000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 18</td>
+          <td>4</td>
+          <td>15600</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>110000<br>+<br>55000<br>+<br>55000<br>+<br>55000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 19</td>
+          <td>4</td>
+          <td>16400</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>120000<br>+<br>60000<br>+<br>60000<br>+<br>60000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 20</td>
+          <td>4</td>
+          <td>17200</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/expLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-914.png"><br>+<br><img src="element/evolve_material_uv-915.png"><br>+<br><img src="element/evolve_material_uv-914.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 21</td>
+          <td>5</td>
+          <td>18000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>150000<br>+<br>75000<br>+<br>75000<br>+<br>75000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 22</td>
+          <td>5</td>
+          <td>18800</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>200000<br>+<br>100000<br>+<br>100000<br>+<br>100000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 23</td>
+          <td>5</td>
+          <td>19600</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/superLeonard.png"><br>+<br>8★<br><img src="others/superLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">5★ 6★<br>裝備寶箱</td>
+          <td>200000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 24</td>
+          <td>5</td>
+          <td>20400</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>250000<br>+<br>125000<br>+<br>125000<br>+<br>125000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 25</td>
+          <td>5</td>
+          <td>21200</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>300000<br>+<br>150000<br>+<br>150000<br>+<br>150000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 26</td>
+          <td>6</td>
+          <td>22000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/superLeonard.png"><br>+<br>8★<br><img src="others/extremeLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">5★ 6★<br>裝備寶箱</td>
+          <td>300000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 27</td>
+          <td>6</td>
+          <td>22800</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>350000<br>+<br>175000<br>+<br>175000<br>+<br>175000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 28</td>
+          <td>6</td>
+          <td>23600</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>400000<br>+<br>200000<br>+<br>200000<br>+<br>200000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 29</td>
+          <td>6</td>
+          <td>24400</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>450000<br>+<br>225000<br>+<br>225000<br>+<br>225000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 30</td>
+          <td>6</td>
+          <td>25200</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/superLeonard.png"><br>+<br>8★<br><img src="others/ultraLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">5★ 6★<br>裝備寶箱</td>
+          <td>500000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 31</td>
+          <td>7</td>
+          <td>26000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>500000<br>+<br>250000<br>+<br>250000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 32</td>
+          <td>7</td>
+          <td>26800</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>600000<br>+<br>300000<br>+<br>300000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 33</td>
+          <td>7</td>
+          <td>27600</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/superLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-905.png"><br>+<br><img src="element/evolve_material_uv-905.png"><br>+<br><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 34</td>
+          <td>7</td>
+          <td>28400</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>700000<br>+<br>350000<br>+<br>350000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 35</td>
+          <td>7</td>
+          <td>29200</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>800000<br>+<br>400000<br>+<br>400000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 36</td>
+          <td>8</td>
+          <td>30000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/extremeLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-910.png"><br>+<br><img src="element/evolve_material_uv-910.png"><br>+<br><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 37</td>
+          <td>8</td>
+          <td>30800</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>900000<br>+<br>450000<br>+<br>450000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 38</td>
+          <td>8</td>
+          <td>31600</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>1000000<br>+<br>500000<br>+<br>500000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 39</td>
+          <td>8</td>
+          <td>32400</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>1100000<br>+<br>550000<br>+<br>550000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 40</td>
+          <td>8</td>
+          <td>33200</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/ultraLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="element/evolve_material_uv-915.png"><br>+<br><img src="element/evolve_material_uv-915.png"><br>+<br><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 41</td>
+          <td>9</td>
+          <td>34000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>1200000<br>+<br>600000<br>+<br>600000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 42</td>
+          <td>9</td>
+          <td>34800</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>1300000<br>+<br>650000<br>+<br>650000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 43</td>
+          <td>9</td>
+          <td>35600</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/superLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">6★<br>武器寶箱<br>+<br>6★<br>護具寶箱<br>+<br>6★<br>飾品寶箱</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 44</td>
+          <td>9</td>
+          <td>36400</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>1500000<br>+<br>750000<br>+<br>750000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 45</td>
+          <td>9</td>
+          <td>37200</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>1750000<br>+<br>875000<br>+<br>875000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 46</td>
+          <td>10</td>
+          <td>38000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="others/feather.png"><br>+<br><img src="others/feather.png"></td>
+          <td data-drop="1">8★<br><img src="others/superLeonard.png"><br>+<br>8★<br><img src="others/extremeLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 47</td>
+          <td>10</td>
+          <td>38800</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/superLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>2000000<br>+<br>1000000<br>+<br>1000000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 48</td>
+          <td>10</td>
+          <td>39600</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/extremeLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">6★<br>武器寶箱</td>
+          <td>2500000<br>+<br>1250000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 49</td>
+          <td>10</td>
+          <td>40400</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/ultraLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">6★<br>護具寶箱</td>
+          <td>5000000<br>+<br>2500000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 50</td>
+          <td>10</td>
+          <td>41200</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/ultraLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">6★<br>飾品寶箱</td>
+          <td>3000000<br>+<br>3000000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 51</td>
+          <td>10</td>
+          <td>42000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>2000000<br>+<br>1000000<br>+<br>1000000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 52</td>
+          <td>10</td>
+          <td>42800</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>2250000<br>+<br>1125000<br>+<br>1125000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 53</td>
+          <td>10</td>
+          <td>43600</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/superLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">6★<br>武器寶箱<br>+<br>6★<br>護具寶箱<br>+<br>6★<br>飾品寶箱</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 54</td>
+          <td>10</td>
+          <td>44400</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>2500000<br>+<br>1250000<br>+<br>1250000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 55</td>
+          <td>10</td>
+          <td>45200</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>2750000<br>+<br>1375000<br>+<br>1375000<br>+<br>2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 56</td>
+          <td>10</td>
+          <td>46000</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1"><img src="others/feather.png"><br>+<br><img src="others/feather.png"></td>
+          <td data-drop="1">8★<br><img src="others/superLeonard.png"><br>8★<br><img src="others/extremeLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 57</td>
+          <td>10</td>
+          <td>46800</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/superLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td>3000000<br>+<br>1500000<br>+<br>1500000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 58</td>
+          <td>10</td>
+          <td>47600</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/extremeLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">6★<br>武器寶箱</td>
+          <td>3500000<br>+<br>1750000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 59</td>
+          <td>10</td>
+          <td>48400</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/ultraLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">6★<br>護具寶箱</td>
+          <td>5000000<br>+<br>2500000</td>
+        </tr>
+        <tr>
+          <td data-mode="4">無限之塔 60</td>
+          <td>10</td>
+          <td>49200</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">8★<br><img src="others/ultraLeonard.png"></td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="0">-</td>
+          <td data-drop="1">6★<br>飾品寶箱</td>
+          <td>4000000<br>+<br>4000000</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

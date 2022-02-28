@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  font-family: DFKai-SB;
+  font-size: 1.5vw;
+  user-select: none;
+}
+
+body {
+  background: hsl(187, 94%, 54%);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.next {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 14vw;
+  height: 14vw;
+  background: url(others/arrow_down.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.6;
+  transform: translateX(-50%);
+  z-index: 100;
+  animation: sparkle 1.4s linear infinite;
+}
+
+.next::before {
+  content: "下一步";
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.re {
+  top: 0;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.re::before {
+  content: "重新輸入";
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%) rotate(180deg);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.outline {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 94vw;
+  height: calc(100vh - 6vw);
+  border: 1px solid black;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 500%;
+}
+
+.container.step1 {
+  animation: step1 1s ease-in-out forwards;
+}
+
+@keyframes step1 {
+  from {
+    top: -400%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+.container.step2 {
+  animation: step2 1s ease-in-out forwards;
+}
+
+@keyframes step2 {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100%;
+  }
+}
+
+.container.step3 {
+  animation: step3 1s ease-in-out forwards;
+}
+
+@keyframes step3 {
+  from {
+    top: -100%;
+  }
+  to {
+    top: -200%;
+  }
+}
+
+.container.step4 {
+  animation: step4 1s ease-in-out forwards;
+}
+
+@keyframes step4 {
+  from {
+    top: -200%;
+  }
+  to {
+    top: -300%;
+  }
+}
+
+.container.step5 {
+  animation: step5 1s ease-in-out forwards;
+}
+
+@keyframes step5 {
+  from {
+    top: -300%;
+  }
+  to {
+    top: -400%;
+  }
+}
+
+.ranger-data {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+}
+
+.ranger-figure {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: min(50vw, 36vh);
+  transform: translate(-50%, -50%);
+}
+
+.data {
+  display: flex;
+  justify-content: flex-end;
+  align-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.data > h1 {
+  width: 25%;
+  text-align: center;
+}
+
+.data > input {
+  margin-right: 5%;
+  width: 60%;
+}
+
+.weapon {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: red;
+}
+
+.sheild {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: green;
+}
+
+.accessory {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: blue;
+}

@@ -1,0 +1,597 @@
+<html>
+  <head>
+    <title>無限之塔獎勵篩選</title>
+    <link rel="icon" href="others/logo.png">
+    <link rel="stylesheet" href="style2.css">
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script2.js" defer></script>
+  </head>
+  <body>
+    <img class="bg" src="others/unlimit.png">
+    <div class="select-list">
+      <div class="finish-type">
+        <h1>通關方式選擇</h1>
+        <div class="all finish selection" onclick="filterList(0)">全部選取</div>
+        <div class="finish check selection" onclick="filterList(1)">解放</div>
+        <div class="finish check selection" onclick="filterList(2)">破籠</div>
+        <div class="finish check selection" onclick="filterList(3)">拆塔</div>
+        <div class="finish check selection" onclick="filterList(4)">魔王關</div>
+      </div>
+      <div class="mode-type">
+        <h2>通關條件選擇</h2>
+        <div class="all mode c selection" onclick="filterList(10)">全部取消</div>
+        <div class="mode check selection" onclick="filterList(11)">出擊數</div>
+        <div class="mode check selection" onclick="filterList(12)">時限內</div>
+        <div class="mode check selection" onclick="filterList(13)">不用好友</div>
+        <div class="mode check selection" onclick="filterList(14)">不用道具</div>
+        <div class="mode check selection" onclick="filterList(15)">無特定種類</div>
+        <div class="mode check selection" onclick="filterList(16)">僅特定種類</div>
+      </div>
+      <div class="drop-type">
+        <h3>掉落物選擇</h3>
+        <div class="all drop selection" onclick="filterList(20)">全部取消</div>
+        <div class="drop uncheck selection" onclick="filterList(21)">李奧納德</div>
+        <div class="drop uncheck selection" onclick="filterList(22)">金幣</div>
+        <div class="drop uncheck selection" onclick="filterList(23)">羽毛</div>
+        <div class="drop uncheck selection" onclick="filterList(24)">特殊羽毛</div>
+        <div class="drop uncheck selection" onclick="filterList(25)">裝備</div>
+        <div class="drop uncheck selection" onclick="filterList(26)">屬性寶石</div>
+        <div class="drop uncheck selection" onclick="filterList(27)">雷納德</div>
+        <div class="drop uncheck selection" onclick="filterList(28)">扭蛋券</div>
+      </div>
+    </div>
+    <div class="table-container">
+      <table id="AllList" class="all-mode">
+        <tr id="header">
+          <td class="No.">關卡</td>
+          <td class="feathers">羽毛消耗</td>
+          <td class="coins">金幣獎勵</td>
+          <td class="drops">通關獎勵</td>
+          <td class="drops">第一任務</td>
+          <td class="drops">第二任務</td>
+          <td class="drops">第三任務</td>
+        </tr>
+        <tr>
+          <td data-mode="0">1</td>
+          <td>1</td>
+          <td>2000</td>
+          <td data-drop-type="1">20000</td>
+          <td data-drop-type="1">10000</td>
+          <td data-drop-type="1">10000</td>
+          <td data-drop="0" data-drop-type="1">10000</td>
+        </tr>
+        <tr>
+          <td data-mode="0">2</td>
+          <td>1</td>
+          <td>2800</td>
+          <td data-drop-type="1">25000</td>
+          <td data-drop-type="1">12500</td>
+          <td data-drop-type="1">12500</td>
+          <td data-drop="0" data-drop-type="1">12500</td>
+        </tr>
+        <tr>
+          <td data-mode="1">3</td>
+          <td>1</td>
+          <td>3600</td>
+          <td data-drop-type="4">4★ 5★<br>裝備寶箱</td>
+          <td data-drop-type="4">3★ 4★<br>武器寶箱</td>
+          <td data-drop-type="4">3★ 4★<br>護具寶箱</td>
+          <td data-drop="1" data-drop-type="4">3★ 4★<br>飾品寶箱</td>
+        </tr>
+        <tr>
+          <td data-mode="1">4</td>
+          <td>1</td>
+          <td>4400</td>
+          <td data-drop-type="1">35000</td>
+          <td data-drop-type="1">17500</td>
+          <td data-drop-type="1">17500</td>
+          <td data-drop="1" data-drop-type="1">17500</td>
+        </tr>
+        <tr>
+          <td data-mode="0">5</td>
+          <td>1</td>
+          <td>5200</td>
+          <td data-drop-type="1">40000</td>
+          <td data-drop-type="1">20000</td>
+          <td data-drop-type="1">20000</td>
+          <td data-drop="0" data-drop-type="1">20000</td>
+        </tr>
+        <tr>
+          <td data-mode="0">6</td>
+          <td>2</td>
+          <td>6000</td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-904.png"></td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-904.png"></td>
+          <td data-drop="0" data-drop-type="5"><img src="element/evolve_material_uv-904.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="1">7</td>
+          <td>2</td>
+          <td>6800</td>
+          <td data-drop-type="1">50000</td>
+          <td data-drop-type="1">25000</td>
+          <td data-drop-type="1">25000</td>
+          <td data-drop="1" data-drop-type="1">25000</td>
+        </tr>
+        <tr>
+          <td data-mode="1">8</td>
+          <td>2</td>
+          <td>7600</td>
+          <td data-drop-type="1">55000</td>
+          <td data-drop-type="1">27500</td>
+          <td data-drop-type="1">27500</td>
+          <td data-drop="1" data-drop-type="1">27500</td>
+        </tr>
+        <tr>
+          <td data-mode="2">9</td>
+          <td>2</td>
+          <td>8400</td>
+          <td data-drop-type="1">60000</td>
+          <td data-drop-type="1">30000</td>
+          <td data-drop-type="1">30000</td>
+          <td data-drop="0" data-drop-type="1">30000</td>
+        </tr>
+        <tr>
+          <td data-mode="3">10</td>
+          <td>2</td>
+          <td>9200</td>
+          <td data-drop-type="4">5★ 6★<br>裝備寶箱</td>
+          <td data-drop-type="4">4★ 5★<br>武器寶箱</td>
+          <td data-drop-type="4">4★ 5★<br>護具寶箱</td>
+          <td data-drop="1" data-drop-type="4">4★ 5★<br>飾品寶箱</td>
+        </tr>
+        <tr>
+          <td data-mode="1">11</td>
+          <td>3</td>
+          <td>10000</td>
+          <td data-drop-type="1">70000</td>
+          <td data-drop-type="1">35000</td>
+          <td data-drop-type="1">35000</td>
+          <td data-drop="1" data-drop-type="1">35000</td>
+        </tr>
+        <tr>
+          <td data-mode="1">12</td>
+          <td>3</td>
+          <td>10800</td>
+          <td data-drop-type="1">75000</td>
+          <td data-drop-type="1">37500</td>
+          <td data-drop-type="1">37500</td>
+          <td data-drop="1" data-drop-type="1">37500</td>
+        </tr>
+        <tr>
+          <td data-mode="0">13</td>
+          <td>3</td>
+          <td>11600</td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-909.png"></td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-909.png"></td>
+          <td data-drop="0" data-drop-type="5"><img src="element/evolve_material_uv-909.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="0">14</td>
+          <td>3</td>
+          <td>12400</td>
+          <td data-drop-type="1">85000</td>
+          <td data-drop-type="1">42500</td>
+          <td data-drop-type="1">42500</td>
+          <td data-drop="0" data-drop-type="1">42500</td>
+        </tr>
+        <tr>
+          <td data-mode="1">15</td>
+          <td>3</td>
+          <td>13200</td>
+          <td data-drop-type="1">90000</td>
+          <td data-drop-type="1">45000</td>
+          <td data-drop-type="1">45000</td>
+          <td data-drop="1" data-drop-type="1">45000</td>
+        </tr>
+        <tr>
+          <td data-mode="0">16</td>
+          <td>4</td>
+          <td>14000</td>
+          <td data-drop-type="3"><img src="others/spfeather.png"></td>
+          <td data-drop-type="2"><img src="others/feather.png"></td>
+          <td data-drop-type="2"><img src="others/feather.png"></td>
+          <td data-drop="0" data-drop-type="2"><img src="others/feather.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="0">17</td>
+          <td>4</td>
+          <td>14800</td>
+          <td data-drop-type="1">100000</td>
+          <td data-drop-type="1">50000</td>
+          <td data-drop-type="1">50000</td>
+          <td data-drop="0" data-drop-type="1">50000</td>
+        </tr>
+        <tr>
+          <td data-mode="2">18</td>
+          <td>4</td>
+          <td>15600</td>
+          <td data-drop-type="1">110000</td>
+          <td data-drop-type="1">55000</td>
+          <td data-drop-type="1">55000</td>
+          <td data-drop="1" data-drop-type="1">55000</td>
+        </tr>
+        <tr>
+          <td data-mode="1">19</td>
+          <td>4</td>
+          <td>16400</td>
+          <td data-drop-type="1">120000</td>
+          <td data-drop-type="1">60000</td>
+          <td data-drop-type="1">60000</td>
+          <td data-drop="1" data-drop-type="1">60000</td>
+        </tr>
+        <tr>
+          <td data-mode="3">20</td>
+          <td>4</td>
+          <td>17200</td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-914.png"></td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-914.png"></td>
+          <td data-drop="1" data-drop-type="6">8★<br>雷納德博士<br><img src="others/expLeonard.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="0">21</td>
+          <td>5</td>
+          <td>18000</td>
+          <td data-drop-type="1">150000</td>
+          <td data-drop-type="1">75000</td>
+          <td data-drop-type="1">75000</td>
+          <td data-drop="0" data-drop-type="1">75000</td>
+        </tr>
+        <tr>
+          <td data-mode="1">22</td>
+          <td>5</td>
+          <td>18800</td>
+          <td data-drop-type="1">200000</td>
+          <td data-drop-type="1">100000</td>
+          <td data-drop-type="1">100000</td>
+          <td data-drop="1" data-drop-type="1">100000</td>
+        </tr>
+        <tr>
+          <td data-mode="0">23</td>
+          <td>5</td>
+          <td>19600</td>
+          <td data-drop-type="0">8★<br>超級李奧納德<br><img src="others/superLeonard.png"></td>
+          <td data-drop-type="1">200000</td>
+          <td data-drop-type="4">5★ 6★<br>裝備寶箱</td>
+          <td data-drop="0" data-drop-type="0">8★<br>超級李奧納德<br><img src="others/superLeonard.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="0">24</td>
+          <td>5</td>
+          <td>20400</td>
+          <td data-drop-type="1">250000</td>
+          <td data-drop-type="1">125000</td>
+          <td data-drop-type="1">125000</td>
+          <td data-drop="0" data-drop-type="1">125000</td>
+        </tr>
+        <tr>
+          <td data-mode="1">25</td>
+          <td>5</td>
+          <td>21200</td>
+          <td data-drop-type="1">300000</td>
+          <td data-drop-type="1">150000</td>
+          <td data-drop-type="1">150000</td>
+          <td data-drop="1" data-drop-type="1">150000</td>
+        </tr>
+        <tr>
+          <td data-mode="0">26</td>
+          <td>6</td>
+          <td>22000</td>
+          <td data-drop-type="0">8★<br>終極李奧納德<br><img src="others/extremeLeonard.png"></td>
+          <td data-drop-type="1">300000</td>
+          <td data-drop-type="4">5★ 6★<br>裝備寶箱</td>
+          <td data-drop="0" data-drop-type="0">8★<br>超級李奧納德<br><img src="others/superLeonard.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="0">27</td>
+          <td>6</td>
+          <td>22800</td>
+          <td data-drop-type="1">350000</td>
+          <td data-drop-type="1">175000</td>
+          <td data-drop-type="1">175000</td>
+          <td data-drop="0" data-drop-type="1">175000</td>
+        </tr>
+        <tr>
+          <td data-mode="1">28</td>
+          <td>6</td>
+          <td>23600</td>
+          <td data-drop-type="1">400000</td>
+          <td data-drop-type="1">200000</td>
+          <td data-drop-type="1">200000</td>
+          <td data-drop="1" data-drop-type="1">200000</td>
+        </tr>
+        <tr>
+          <td data-mode="2">29</td>
+          <td>6</td>
+          <td>24400</td>
+          <td data-drop-type="1">450000</td>
+          <td data-drop-type="1">225000</td>
+          <td data-drop-type="1">225000</td>
+          <td data-drop="0" data-drop-type="1">225000</td>
+        </tr>
+        <tr>
+          <td data-mode="3">30</td>
+          <td>6</td>
+          <td>25200</td>
+          <td data-drop-type="0">8★<br>究極李奧納德<br><img src="others/ultraLeonard.png"></td>
+          <td data-drop-type="1">500000</td>
+          <td data-drop-type="4">5★ 6★<br>裝備寶箱</td>
+          <td data-drop="1" data-drop-type="0">8★<br>超級李奧納德<br><img src="others/superLeonard.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="1">31</td>
+          <td>7</td>
+          <td>26000</td>
+          <td data-drop-type="1">500000</td>
+          <td data-drop-type="1">250000</td>
+          <td data-drop-type="1">250000</td>
+          <td data-drop="1" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="0">32</td>
+          <td>7</td>
+          <td>26800</td>
+          <td data-drop-type="1">600000</td>
+          <td data-drop-type="1">300000</td>
+          <td data-drop-type="1">300000</td>
+          <td data-drop="0" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="1">33</td>
+          <td>7</td>
+          <td>27600</td>
+          <td data-drop-type="0">8★<br>超級李奧納德<br><img src="others/superLeonard.png"></td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-905.png"></td>
+          <td data-drop="1" data-drop-type="5"><img src="element/evolve_material_uv-905.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="1">34</td>
+          <td>7</td>
+          <td>28400</td>
+          <td data-drop-type="1">700000</td>
+          <td data-drop-type="1">350000</td>
+          <td data-drop-type="1">350000</td>
+          <td data-drop="1" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="0">35</td>
+          <td>7</td>
+          <td>29200</td>
+          <td data-drop-type="1">800000</td>
+          <td data-drop-type="1">400000</td>
+          <td data-drop-type="1">400000</td>
+          <td data-drop="0" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="1">36</td>
+          <td>8</td>
+          <td>30000</td>
+          <td data-drop-type="0">8★<br>終極李奧納德<br><img src="others/extremeLeonard.png"></td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-910.png"></td>
+          <td data-drop="1" data-drop-type="5"><img src="element/evolve_material_uv-910.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="1">37</td>
+          <td>8</td>
+          <td>30800</td>
+          <td data-drop-type="1">900000</td>
+          <td data-drop-type="1">450000</td>
+          <td data-drop-type="1">450000</td>
+          <td data-drop="1" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="0">38</td>
+          <td>8</td>
+          <td>31600</td>
+          <td data-drop-type="1">1000000</td>
+          <td data-drop-type="1">500000</td>
+          <td data-drop-type="1">500000</td>
+          <td data-drop="0" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="2">39</td>
+          <td>8</td>
+          <td>32400</td>
+          <td data-drop-type="1">1100000</td>
+          <td data-drop-type="1">550000</td>
+          <td data-drop-type="1">550000</td>
+          <td data-drop="1" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="3">40</td>
+          <td>8</td>
+          <td>33200</td>
+          <td data-drop-type="0">8★<br>究極李奧納德<br><img src="others/ultraLeonard.png"></td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop-type="5"><img src="element/evolve_material_uv-915.png"></td>
+          <td data-drop="1" data-drop-type="5"><img src="element/evolve_material_uv-915.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="0">41</td>
+          <td>9</td>
+          <td>34000</td>
+          <td data-drop-type="1">1200000</td>
+          <td data-drop-type="1">600000</td>
+          <td data-drop-type="1">600000</td>
+          <td data-drop="2" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="0">42</td>
+          <td>9</td>
+          <td>34800</td>
+          <td data-drop-type="1">1300000</td>
+          <td data-drop-type="1">650000</td>
+          <td data-drop-type="1">650000</td>
+          <td data-drop="2" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="1">43</td>
+          <td>9</td>
+          <td>35600</td>
+          <td data-drop-type="0">8★<br>超級李奧納德<br><img src="others/superLeonard.png"></td>
+          <td data-drop-type="4">6★<br>武器寶箱</td>
+          <td data-drop-type="4">6★<br>護具寶箱</td>
+          <td data-drop="3" data-drop-type="4">6★<br>飾品寶箱</td>
+        </tr>
+        <tr>
+          <td data-mode="1">44</td>
+          <td>9</td>
+          <td>36400</td>
+          <td data-drop-type="1">1500000</td>
+          <td data-drop-type="1">750000</td>
+          <td data-drop-type="1">750000</td>
+          <td data-drop="3" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="0">45</td>
+          <td>9</td>
+          <td>37200</td>
+          <td data-drop-type="1">1750000</td>
+          <td data-drop-type="1">875000</td>
+          <td data-drop-type="1">875000</td>
+          <td data-drop="4" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="0">46</td>
+          <td>10</td>
+          <td>38000</td>
+          <td data-drop-type="0">8★<br>終極李奧納德<br><img src="others/extremeLeonard.png"></td>
+          <td data-drop-type="2"><img src="others/feather.png"></td>
+          <td data-drop-type="2"><img src="others/feather.png"></td>
+          <td data-drop="4" data-drop-type="0">8★<br>超級李奧納德<br><img src="others/superLeonard.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="2">47</td>
+          <td>10</td>
+          <td>38800</td>
+          <td data-drop-type="1">2000000</td>
+          <td data-drop-type="1">1000000</td>
+          <td data-drop-type="1">1000000</td>
+          <td data-drop="4" data-drop-type="0">8★<br>超級李奧納德<br><img src="others/superLeonard.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="1">48</td>
+          <td>10</td>
+          <td>39600</td>
+          <td data-drop-type="1">2500000</td>
+          <td data-drop-type="1">1250000</td>
+          <td data-drop-type="4">6★<br>武器寶箱</td>
+          <td data-drop="5" data-drop-type="0">8★<br>終極李奧納德<br><img src="others/extremeLeonard.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="1">49</td>
+          <td>10</td>
+          <td>40400</td>
+          <td data-drop-type="1">5000000</td>
+          <td data-drop-type="1">2500000</td>
+          <td data-drop-type="4">6★<br>護具寶箱</td>
+          <td data-drop="5" data-drop-type="0">8★<br>究極李奧納德<br><img src="others/ultraLeonard.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="3">50</td>
+          <td>10</td>
+          <td>41200</td>
+          <td data-drop-type="0">8★<br>究極李奧納德<br><img src="others/ultraLeonard.png"></td>
+          <td data-drop-type="1">3000000</td>
+          <td data-drop-type="4">6★<br>飾品寶箱</td>
+          <td data-drop="5" data-drop-type="1">3000000</td>
+        </tr>
+        <tr>
+          <td data-mode="1">51</td>
+          <td>10</td>
+          <td>42000</td>
+          <td data-drop-type="1">2000000</td>
+          <td data-drop-type="1">1000000</td>
+          <td data-drop-type="1">1000000</td>
+          <td data-drop="2" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="1">52</td>
+          <td>10</td>
+          <td>42800</td>
+          <td data-drop-type="1">2250000</td>
+          <td data-drop-type="1">1125000</td>
+          <td data-drop-type="1">1125000</td>
+          <td data-drop="2" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="0">53</td>
+          <td>10</td>
+          <td>43600</td>
+          <td data-drop-type="0">8★<br>超級李奧納德<br><img src="others/superLeonard.png"></td>
+          <td data-drop-type="4">6★<br>武器寶箱</td>
+          <td data-drop-type="4">6★<br>護具寶箱</td>
+          <td data-drop="3" data-drop-type="4">6★<br>飾品寶箱</td>
+        </tr>
+        <tr>
+          <td data-mode="0">54</td>
+          <td>10</td>
+          <td>44400</td>
+          <td data-drop-type="1">2500000</td>
+          <td data-drop-type="1">1250000</td>
+          <td data-drop-type="1">1250000</td>
+          <td data-drop="3" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="1">55</td>
+          <td>10</td>
+          <td>45200</td>
+          <td data-drop-type="1">2750000</td>
+          <td data-drop-type="1">1375000</td>
+          <td data-drop-type="1">1375000</td>
+          <td data-drop="4" data-drop-type="7">2張 扭蛋券</td>
+        </tr>
+        <tr>
+          <td data-mode="0">56</td>
+          <td>10</td>
+          <td>46000</td>
+          <td data-drop-type="0">8★<br>終極李奧納德<br><img src="others/extremeLeonard.png"></td>
+          <td data-drop-type="2"><img src="others/feather.png"></td>
+          <td data-drop-type="2"><img src="others/feather.png"></td>
+          <td data-drop="4" data-drop-type="0">8★<br>超級李奧納德<br><img src="others/superLeonard.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="0">57</td>
+          <td>10</td>
+          <td>46800</td>
+          <td data-drop-type="1">3000000</td>
+          <td data-drop-type="1">1500000</td>
+          <td data-drop-type="1">1500000</td>
+          <td data-drop="4" data-drop-type="0">8★<br>超級李奧納德<br><img src="others/superLeonard.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="2">58</td>
+          <td>10</td>
+          <td>47600</td>
+          <td data-drop-type="1">3500000</td>
+          <td data-drop-type="1">1750000</td>
+          <td data-drop-type="4">6★<br>武器寶箱</td>
+          <td data-drop="5" data-drop-type="0">8★<br>終極李奧納德<br><img src="others/extremeLeonard.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="1">59</td>
+          <td>10</td>
+          <td>48400</td>
+          <td data-drop-type="1">5000000</td>
+          <td data-drop-type="1">2500000</td>
+          <td data-drop-type="4">6★<br>護具寶箱</td>
+          <td data-drop="5" data-drop-type="0">8★<br>究極李奧納德<br><img src="others/ultraLeonard.png"></td>
+        </tr>
+        <tr>
+          <td data-mode="3">60</td>
+          <td>10</td>
+          <td>49200</td>
+          <td data-drop-type="0">8★<br>究極李奧納德<br><img src="others/ultraLeonard.png"></td>
+          <td data-drop-type="1">4000000</td>
+          <td data-drop-type="4">6★<br>飾品寶箱</td>
+          <td data-drop="5" data-drop-type="1">4000000</td>
+        </tr>
+      </table>
+  </body>
+</html>
