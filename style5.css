@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  font-family: DFKai-SB;
+  font-size: 1.5vw;
+  user-select: none;
+}
+
+body {
+  width: 100%;
+  padding-bottom: 5rem;
+}
+
+.copied {
+  position: fixed;
+  top : -6rem;
+  left: 50%;
+  width: 12rem;
+  height: 4rem;
+  background: hsl(17, 94%, 80%);
+  border-width: 2px;
+  border-radius: 0.7rem;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 2.4rem hsl(17, 94%, 70%);
+  text-align: center;
+  line-height: 4rem;
+}
+
+.hidden {
+  animation: hide .3s cubic-bezier(0.9, -0.8, 0, 0) forwards;
+}
+
+.showup {
+  animation: show .3s cubic-bezier(0, 0, 0.1, 1.8) forwards;
+}
+
+@keyframes hide {
+  from {
+    top: 15%;
+  } to {
+    top: -6rem;
+  }
+}
+
+@keyframes show {
+  from {
+    top: -6rem;
+  } to {
+    top: 15%;
+  }
+}
+
+.header {
+  margin-left: 18%;
+  margin-right: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64%;
+  height: 6rem;
+  border-bottom: 2px solid;
+}
+
+h1 {
+  font-size: 2.7rem;
+}
+
+h2 {
+  margin: 2rem;
+  margin-left: 15%;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.steps {
+  margin-top: 2rem;
+  display: flex;
+  width: 72%;
+  padding-left: 14%;
+  padding-right: 14%;
+}
+
+.steps > img {
+  width: 45%;
+}
+
+.steps > p {
+  margin-left: 10%;
+}
+
+.report {
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+  font-size: 1.2rem;
+}
+
+.report > div {
+  width: 20rem;
+  height: 3rem;
+  background: hsl(100, 95%, 60%);
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.developer {
+  margin-top: 0.5rem;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+}
+
+.developer a {
+  color: black;
+  text-decoration: none;
+}

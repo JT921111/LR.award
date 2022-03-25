@@ -1,0 +1,99 @@
+
+
+$('.sh-list > img').click(function () {
+  $('.sh-list > img').removeClass('choose');
+  $(this).addClass('choose');
+  $('.shield h4').text($(this).attr('title'));
+  powerup[0] = parseInt($(this).attr('data-promote-1'));
+  powerup[1] = parseInt($(this).attr('data-promote-2'));
+  powerup[2] = parseInt($(this).attr('data-promote-3'));
+  for (var i = 0; i < 3; i++) {
+    let j = i + 1;
+    switch (powerup[i]) {
+      case 0:
+        $('.shield h3:nth-of-type(' + j + ')').text('物理攻擊力(%)');
+        break;
+      case 1:
+        $('.shield h3:nth-of-type(' + j + ')').text('物理攻擊力(數值)');
+        break;
+      case 2:
+        $('.shield h3:nth-of-type(' + j + ')').text('魔法攻擊力(%)');
+        break;
+      case 3:
+        $('.shield h3:nth-of-type(' + j + ')').text('魔法攻擊力(數值)');
+        break;
+      case 4:
+        $('.shield h3:nth-of-type(' + j + ')').text('體力(%)');
+        break;
+      case 5:
+        $('.shield h3:nth-of-type(' + j + ')').text('體力(數值)');
+        break;
+      case 6:
+        $('.shield h3:nth-of-type(' + j + ')').text('物理防禦力(數值)');
+        break;
+      case 7:
+        $('.shield h3:nth-of-type(' + j + ')').text('魔法防禦力(數值)');
+        break;
+      case 8:
+        $('.shield h3:nth-of-type(' + j + ')').text('攻擊速度(數值)');
+        break;
+      case 9:
+        $('.shield h3:nth-of-type(' + j + ')').text('移動速度(數值)');
+        break;
+      case 10:
+        $('.shield h3:nth-of-type(' + j + ')').text('攻擊範圍(數值)');
+        break;
+      case 11:
+        $('.shield h3:nth-of-type(' + j + ')').text('暴擊機率(%)');
+        break;
+      case 12:
+        $('.shield h3:nth-of-type(' + j + ')').text('暴擊傷害(%)');
+        break;
+      case 13:
+        $('.shield h3:nth-of-type(' + j + ')').text('閃避率(%)');
+        break;
+      case 14:
+        $('.shield h3:nth-of-type(' + j + ')').text('命中率(%)');
+        break;
+      case 15:
+        $('.shield h3:nth-of-type(' + j + ')').text('技能發動率(%)');
+        break;
+      case 16:
+        $('.shield h3:nth-of-type(' + j + ')').text('技能閃避率(%)');
+        break;
+      case 17:
+        $('.shield h3:nth-of-type(' + j + ')').text('技能命中率(%)');
+        break;
+      case 18:
+        $('.shield h3:nth-of-type(' + j + ')').text('技能抗性(%)');
+        break;
+      case 19:
+        $('.shield h3:nth-of-type(' + j + ')').text('減少重新生產時間(%)');
+        break;
+      case 20:
+        $('.shield h3:nth-of-type(' + j + ')').text('減少礦物成本(%)');
+        break;
+      case 21:
+        $('.shield h3:nth-of-type(' + j + ')').text('昏迷抗性(%)');
+        break;
+      case 22:
+        $('.shield h3:nth-of-type(' + j + ')').text('靜止抗性(%)');
+        break;
+      case 23:
+        $('.shield h3:nth-of-type(' + j + ')').text('總攻擊力(%)');
+        break;
+      case 24:
+        $('.shield h3:nth-of-type(' + j + ')').text('連擊機率(%)');
+        break;
+      case 25:
+        $('.shield h3:nth-of-type(' + j + ')').text('技能再次發動率(%)');
+        break;
+      case 26:
+        $('.shield h3:nth-of-type(' + j + ')').text('必中率(%)');
+        break;
+      case 27:
+        $('.shield h3:nth-of-type(' + j + ')').text('技能必中率(%)');
+        break;
+    }
+  }
+})

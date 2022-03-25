@@ -153,12 +153,22 @@ body {
   height: 20%;
 }
 
+.ranger-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: white;
+}
+
 .ranger-figure {
   position: absolute;
   top: 50%;
-  left: 25%;
+  left: 50%;
   width: min(50vw, 36vh);
   transform: translate(-50%, -50%);
+  opacity: 0.3;
 }
 
 .data {
@@ -190,16 +200,14 @@ body {
   left: 0;
   width: 100%;
   height: 20%;
-  background: red;
 }
 
-.sheild {
+.shield {
   position: absolute;
   top: 40%;
   left: 0;
   width: 100%;
   height: 20%;
-  background: green;
 }
 
 .accessory {
@@ -207,6 +215,70 @@ body {
   top: 60%;
   left: 0;
   width: 100%;
-  height: 20%;
-  background: blue;
+  height: 20%;;
+}
+
+.wp-list, .sh-list, .ac-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.wp-list::-webkit-scrollbar, .sh-list::-webkit-scrollbar, .ac-list::-webkit-scrollbar {
+  background: transparent;
+}
+
+.wp-list > h2, .sh-list > h2, .ac-list > h2 {
+  width: 100%;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+
+.wp-list > img, .sh-list > img, .ac-list> img {
+  margin: 0.8%;
+  width: 10%;
+  border: 3px solid black;
+  border-radius: 30%;
+}
+
+.wp-list > img.choose, .sh-list > img.choose, .ac-list > img.choose {
+  background:hsl(66, 100%, 53%)
+}
+
+.input-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.input-col > h4 {
+  height: 4rem;
+  width: 100%;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.input-col > h3 {
+  height: 2rem;
+  width: 35%;
+  text-align: center;
+}
+
+.input-col > input {
+  width: 50%;
 }
