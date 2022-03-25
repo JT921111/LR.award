@@ -1,0 +1,282 @@
+[
+  {
+    "name": "梅里奧達斯的領帶",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_7s_acc_07_icon.png",
+    "skill1": "",
+    "skill2": "16",
+    "skill3": "18"
+  },
+  {
+    "name": "20",
+    "link": "黛安娜的護手",
+    "skill1": "https://rangers.lerico.net/res/gear_icon/eq_7s_acc_17_icon.png",
+    "skill2": "",
+    "skill3": "9"
+  },
+  {
+    "name": "16",
+    "link": "20",
+    "skill1": "金恩的抱枕",
+    "skill2": "https://rangers.lerico.net/res/gear_icon/eq_7s_acc_27_icon.png",
+    "skill3": ""
+  },
+  {
+    "name": "16",
+    "link": "17",
+    "skill1": "20",
+    "skill2": "伊麗莎白的單邊襪",
+    "skill3": "https://rangers.lerico.net/res/gear_icon/eq_7s_acc_06_icon.png"
+  },
+  {
+    "name": "",
+    "link": "8",
+    "skill1": "12",
+    "skill2": "19",
+    "skill3": "赫斯緹雅緞帶"
+  },
+  {
+    "name": "https://rangers.lerico.net/res/gear_icon/eq_dm_acc_07_icon.png",
+    "link": "",
+    "skill1": "15",
+    "skill2": "16",
+    "skill3": "20"
+  },
+  {
+    "name": "艾絲的頭飾",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_dm_acc_17_icon.png",
+    "skill1": "",
+    "skill2": "16",
+    "skill3": "17"
+  },
+  {
+    "name": "20",
+    "link": "貝爾的項鍊",
+    "skill1": "https://rangers.lerico.net/res/gear_icon/eq_dm_acc_27_icon.png",
+    "skill2": "",
+    "skill3": "15"
+  },
+  {
+    "name": "17",
+    "link": "20",
+    "skill1": "愛麗絲的頭巾",
+    "skill2": "https://rangers.lerico.net/res/gear_icon/eq_ff_acc_07_icon.png",
+    "skill3": ""
+  },
+  {
+    "name": "13",
+    "link": "16",
+    "skill1": "31",
+    "skill2": "新門紅丸的纏",
+    "skill3": "https://rangers.lerico.net/res/gear_icon/eq_ff_acc_17_icon.png"
+  },
+  {
+    "name": "",
+    "link": "15",
+    "skill1": "17",
+    "skill2": "20",
+    "skill3": "茉希的帽子"
+  },
+  {
+    "name": "https://rangers.lerico.net/res/gear_icon/eq_ff_acc_27_icon.png",
+    "link": "",
+    "skill1": "16",
+    "skill2": "18",
+    "skill3": "20"
+  },
+  {
+    "name": "甘露般的香甜乳酪",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_gs_acc_07_icon.png",
+    "skill1": "",
+    "skill2": "15",
+    "skill3": "171"
+  },
+  {
+    "name": "20",
+    "link": "哥布林殺手的冰淇淋",
+    "skill1": "https://rangers.lerico.net/res/gear_icon/eq_gs_acc_27_icon.png",
+    "skill2": "",
+    "skill3": "15"
+  },
+  {
+    "name": "16",
+    "link": "31",
+    "skill1": "礦人道士的葫蘆",
+    "skill2": "https://rangers.lerico.net/res/gear_icon/eq_gs_acc_17_icon.png",
+    "skill3": ""
+  },
+  {
+    "name": "16",
+    "link": "20",
+    "skill1": "31",
+    "skill2": "超人臂章",
+    "skill3": "https://rangers.lerico.net/res/gear_icon/eq_um_acc_07_icon.png"
+  },
+  {
+    "name": "",
+    "link": "8",
+    "skill1": "19",
+    "skill2": "21",
+    "skill3": "神光棒"
+  },
+  {
+    "name": "https://rangers.lerico.net/res/gear_icon/eq_um_acc_17_icon.png",
+    "link": "",
+    "skill1": "13",
+    "skill2": "20",
+    "skill3": "32"
+  },
+  {
+    "name": "大河變身器",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_um_acc_27_icon.png",
+    "skill1": "",
+    "skill2": "10",
+    "skill3": "15"
+  },
+  {
+    "name": "22",
+    "link": "遺物口紅",
+    "skill1": "https://rangers.lerico.net/res/gear_icon/eq_2202_acc_06_icon.png",
+    "skill2": "",
+    "skill3": "8"
+  },
+  {
+    "name": "15",
+    "link": "21",
+    "skill1": "熊大鑰匙圈",
+    "skill2": "https://rangers.lerico.net/res/gear_icon/eq_acc_est_007_icon.png",
+    "skill3": ""
+  },
+  {
+    "name": "15",
+    "link": "16",
+    "skill1": "20",
+    "skill2": "聖光熊大鑰匙圈",
+    "skill3": "https://rangers.lerico.net/res/gear_icon/eq_acc_est_0072_icon.png"
+  },
+  {
+    "name": "",
+    "link": "15",
+    "skill1": "16",
+    "skill2": "20",
+    "skill3": "莎莉手環"
+  },
+  {
+    "name": "https://rangers.lerico.net/res/gear_icon/eq_acc_est_017_icon.png",
+    "link": "",
+    "skill1": "15",
+    "skill2": "18",
+    "skill3": "20"
+  },
+  {
+    "name": "黑暗莎莉手環",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_acc_est_0172_icon.png",
+    "skill1": "",
+    "skill2": "15",
+    "skill3": "18"
+  },
+  {
+    "name": "20",
+    "link": "軟糖戒指",
+    "skill1": "https://rangers.lerico.net/res/gear_icon/eq_acc_est_027_icon.png",
+    "skill2": "",
+    "skill3": "15"
+  },
+  {
+    "name": "18",
+    "link": "20",
+    "skill1": "軟糖金戒指",
+    "skill2": "https://rangers.lerico.net/res/gear_icon/eq_acc_est_0272_icon.png",
+    "skill3": ""
+  },
+  {
+    "name": "15",
+    "link": "18",
+    "skill1": "20",
+    "skill2": "小狗氣球",
+    "skill3": "https://rangers.lerico.net/res/gear_icon/eq_acc_est_037_icon.png"
+  },
+  {
+    "name": "",
+    "link": "15",
+    "skill1": "16",
+    "skill2": "20",
+    "skill3": "可愛小馬氣球"
+  },
+  {
+    "name": "https://rangers.lerico.net/res/gear_icon/eq_acc_est_0372_icon.png",
+    "link": "",
+    "skill1": "15",
+    "skill2": "16",
+    "skill3": "20"
+  },
+  {
+    "name": "雷納德的堅韌工具箱",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_acc_evt_007_icon.png",
+    "skill1": "",
+    "skill2": "9",
+    "skill3": "15"
+  },
+  {
+    "name": "16",
+    "link": "雷納德的輕便機械裝置",
+    "skill1": "https://rangers.lerico.net/res/gear_icon/eq_acc_evt_017_icon.png",
+    "skill2": "",
+    "skill3": "14"
+  },
+  {
+    "name": "15",
+    "link": "16",
+    "skill1": "雷納德的智慧型鋼筆",
+    "skill2": "https://rangers.lerico.net/res/gear_icon/eq_acc_evt_027_icon.png",
+    "skill3": ""
+  },
+  {
+    "name": "15",
+    "link": "16",
+    "skill1": "17",
+    "skill2": "雷納德戒指",
+    "skill3": "https://rangers.lerico.net/res/gear_icon/eq_acc_evt_077_icon.png"
+  },
+  {
+    "name": "",
+    "link": "11",
+    "skill1": "15",
+    "skill2": "18",
+    "skill3": "聖誕樹的裝飾"
+  },
+  {
+    "name": "https://rangers.lerico.net/res/gear_icon/eq_acc_evt_037_icon.png",
+    "link": "",
+    "skill1": "16",
+    "skill2": "18",
+    "skill3": "20"
+  },
+  {
+    "name": "新年花飾梳子",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_acc_evt_047_icon.png",
+    "skill1": "",
+    "skill2": "15",
+    "skill3": "18"
+  },
+  {
+    "name": "20",
+    "link": "月亮糰子",
+    "skill1": "https://rangers.lerico.net/res/gear_icon/eq_acc_evt_057_icon.png",
+    "skill2": "",
+    "skill3": "15"
+  },
+  {
+    "name": "17",
+    "link": "20",
+    "skill1": "月亮首飾",
+    "skill2": "https://rangers.lerico.net/res/gear_icon/eq_acc_evt_067_icon.png",
+    "skill3": ""
+  },
+  {
+    "name": "16",
+    "link": "17",
+    "skill1": "20",
+    "skill2": "夏日潛水面鏡",
+    "skill3": "https://rangers.lerico.net/res/gear_icon/eq_acc_evt_117_icon.png"
+  }
+]
