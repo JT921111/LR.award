@@ -96,7 +96,7 @@ h2 {
 
 .report > div {
   width: 20rem;
-  height: 3rem;
+  min-height: 3rem;
   background: hsl(100, 95%, 60%);
   padding: 0.8rem;
   text-align: center;
