@@ -1,4 +1,19 @@
 $(document).ready(function () {
+  async function weapon() {
+    $('.wp-list').append('<h2>7星</h2>')
+    const data = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/weapon7.json");
+    const getdata = await data.json();
+    $.each(getdata, function (i) {
+      $('.wp-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '">')
+    })
+    $('.wp-list').append('<h2>6星</h2>')
+    const data2 = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/weapon6.json");
+    const getdata2 = await data2.json();
+    $.each(getdata2, function (i) {
+      $('.wp-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '">')
+    })
+  }
+  
   async function shield() {
     $('.sh-list').append('<h2>7星</h2>')
     const data = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/shield7.json");
@@ -6,6 +21,12 @@ $(document).ready(function () {
     $.each(getdata, function (i) {
       $('.sh-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '">')
     })
+    $('.sh-list').append('<h2>6星</h2>')
+    /*const data2 = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/shield6.json");
+    const getdata2 = await data2.json();
+    $.each(getdata2, function (i) {
+      $('.sh-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '">')
+    })*/
   }
   
   async function accessory() {
@@ -15,7 +36,15 @@ $(document).ready(function () {
     $.each(getdata, function (i) {
       $('.ac-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '">')
     })
+    $('.ac-list').append('<h2>6星</h2>')
+    /*const data2 = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/accessory6.json");
+    const getdata2 = await data2.json();
+    $.each(getdata2, function (i) {
+      $('.ac-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '">')
+    })*/
   }
+
+  weapon();
 
   shield();
 
@@ -44,7 +73,7 @@ $(document).ready(function () {
     nextpage();
   })
 
-  function addweapon() {
+  function addequip() {
     for (var i = 1; i <= 3; i++) {
       if (powerup[i - 1] == 24) {
         powercal[0] += $('up' + i).val();
@@ -97,7 +126,7 @@ $(document).ready(function () {
   //31 技能冷卻
   //32 擊退
 
-  $('.wp-list > img').click(function () {
+  $(document).on('click', '.wp-list > img', function () {
     $('.wp-list > img').removeClass('choose');
     $(this).addClass('choose');
     $('.weapon h4').text($(this).attr('title'));

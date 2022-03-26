@@ -200,6 +200,7 @@ body {
   left: 0;
   width: 100%;
   height: 20%;
+  overflow: hidden;
 }
 
 .shield {
@@ -208,6 +209,7 @@ body {
   left: 0;
   width: 100%;
   height: 20%;
+  overflow: hidden;
 }
 
 .accessory {
@@ -215,7 +217,19 @@ body {
   top: 60%;
   left: 0;
   width: 100%;
-  height: 20%;;
+  height: 20%;
+  overflow: hidden;
+}
+
+.shade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 2%;
+  background: hsl(187, 94%, 54%);
+  box-shadow: 0 0 2rem 2rem hsl(187, 94%, 54%);
+  z-index: 100;
 }
 
 .wp-list, .sh-list, .ac-list {
@@ -228,7 +242,7 @@ body {
   top: 0;
   left: 0;
   width: 50%;
-  height: 100%;
+  height: 98%;
   overflow-y: scroll;
 }
 
