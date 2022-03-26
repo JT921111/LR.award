@@ -12,6 +12,7 @@ $(document).ready(function () {
     $.each(getdata2, function (i) {
       $('.wp-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '">')
     })
+    $('.wp-list').append('<div class="extra-spacing"></div>');
   }
   
   async function shield() {
@@ -27,6 +28,7 @@ $(document).ready(function () {
     $.each(getdata2, function (i) {
       $('.sh-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '">')
     })*/
+    $('.sh-list').append('<div class="extra-spacing"></div>');
   }
   
   async function accessory() {
@@ -42,6 +44,7 @@ $(document).ready(function () {
     $.each(getdata2, function (i) {
       $('.ac-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '">')
     })*/
+    $('.ac-list').append('<div class="extra-spacing"></div>');
   }
 
   weapon();
