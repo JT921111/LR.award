@@ -67,8 +67,8 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 94vw;
-  height: calc(100vh - 6vw);
+  width: min(94vw, calc(100vw - 6vh));
+  height: min(94vh, calc(100vh - 6vw));
   border: 1px solid black;
   transform: translate(-50%, -50%);
   overflow: hidden;
