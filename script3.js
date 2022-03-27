@@ -236,7 +236,7 @@ $(document).ready(function () {
           $('.weapon h3:nth-of-type(' + j + ')').text('技能冷卻減少(%)');
           break;
         case 32:
-          $('.weeapon h3:nth-of-type(' + j + ')').text('擊退抗性(%)');
+          $('.weapon h3:nth-of-type(' + j + ')').text('擊退抗性(%)');
           break;
       }
     }
