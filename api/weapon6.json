@@ -490,13 +490,6 @@
     "skill3": "11"
   },
   {
-    "name": "手錶型麻醉槍",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06co_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
-  },
-  {
     "name": "陽電子步槍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06eva_icon.png",
     "skill1": "1",
@@ -504,43 +497,8 @@
     "skill3": "11"
   },
   {
-    "name": "拳四郎的雙截棍",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06ht_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
-  },
-  {
-    "name": "溫莉的板手",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06metal_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
-  },
-  {
-    "name": "未來的麥克風",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06miku_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
-  },
-  {
-    "name": "如是我斬",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06pl_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
-  },
-  {
-    "name": "隆的手套",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06sf_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
-  },
-  {
-    "name": "6? ??",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06tst_icon.png",
+    "name": "手錶型麻醉槍",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06co_icon.png",
     "skill1": "1",
     "skill2": "3",
     "skill3": "11"
@@ -553,8 +511,29 @@
     "skill3": "11"
   },
   {
+    "name": "撲克牌手槍",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_26co_icon.png",
+    "skill1": "1",
+    "skill2": "3",
+    "skill3": "11"
+  },
+  {
+    "name": "拳四郎的雙截棍",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06ht_icon.png",
+    "skill1": "1",
+    "skill2": "3",
+    "skill3": "11"
+  },
+  {
     "name": "世紀末噴火器",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_16ht_icon.png",
+    "skill1": "1",
+    "skill2": "3",
+    "skill3": "11"
+  },
+  {
+    "name": "溫莉的板手",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06metal_icon.png",
     "skill1": "1",
     "skill2": "3",
     "skill3": "11"
@@ -567,6 +546,20 @@
     "skill3": "11"
   },
   {
+    "name": "愛德華的長矛",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_26metal_icon.png",
+    "skill1": "1",
+    "skill2": "3",
+    "skill3": "11"
+  },
+  {
+    "name": "未來的麥克風",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06miku_icon.png",
+    "skill1": "1",
+    "skill2": "3",
+    "skill3": "11"
+  },
+  {
     "name": "未來的鍵盤",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_16miku_icon.png",
     "skill1": "1",
@@ -574,8 +567,29 @@
     "skill3": "11"
   },
   {
-    "name": "如是我斬2",
+    "name": "未來的長蔥",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_26miku_icon.png",
+    "skill1": "1",
+    "skill2": "3",
+    "skill3": "11"
+  },
+  {
+    "name": "如是我斬",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06pl_icon.png",
+    "skill1": "1",
+    "skill2": "3",
+    "skill3": "11"
+  },
+  {
+    "name": "如是我斬II",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_16pl_icon.png",
+    "skill1": "1",
+    "skill2": "3",
+    "skill3": "11"
+  },
+  {
+    "name": "隆的手套",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06sf_icon.png",
     "skill1": "1",
     "skill2": "3",
     "skill3": "11"
@@ -588,22 +602,8 @@
     "skill3": "11"
   },
   {
-    "name": "撲克牌手槍",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_26co_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
-  },
-  {
-    "name": "愛德華的長矛",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_26metal_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
-  },
-  {
-    "name": "未來的長蔥",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_26miku_icon.png",
+    "name": "6星武器",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_06tst_icon.png",
     "skill1": "1",
     "skill2": "3",
     "skill3": "11"
