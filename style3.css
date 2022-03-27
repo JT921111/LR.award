@@ -39,17 +39,16 @@ body {
 }
 
 .re {
-  top: 0;
   transform: translateX(-50%) rotate(180deg);
 }
 
 .re::before {
   content: "重新輸入";
   position: absolute;
-  top: 25%;
+  top: 75%;
   left: 50%;
   width: 80%;
-  transform: translate(-50%, -50%) rotate(180deg);
+  transform: translate(-50%, -50%) rotate(180deg); 
   text-align: center;
   font-size: 1.2rem;
 }
@@ -67,8 +66,8 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: min(95vw, calc(100vw - 5vh));
-  height: min(95vh, calc(100vh - 5vw));
+  width: min(95vw, calc(95vh * 1.78));
+  height: min(95vh, calc(95vw / 1.78));
   border: 1px solid black;
   transform: translate(-50%, -50%);
   overflow: hidden;
@@ -166,7 +165,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: min(50vw, 36vh);
+  width: min(50%, 36vh);
   transform: translate(-50%, -50%);
   opacity: 0.3;
 }
