@@ -177,310 +177,310 @@
   {
     "name": "翡翠的飛來骨",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_2202_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "10",
+    "skill3": "14"
   },
   {
     "name": "失落的凡恩（複製品）",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_7s_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "11",
+    "skill3": "14"
   },
   {
     "name": "成步堂的勾玉",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ace_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "8",
+    "skill3": "18"
   },
   {
     "name": "御劍的西洋棋子",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ace_wpn_16_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "4",
+    "skill3": "15"
   },
   {
     "name": "Godot的馬克杯",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ace_wpn_26_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "4",
+    "skill2": "13",
+    "skill3": "18"
   },
   {
     "name": "對人用手槍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_at_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
+    "skill1": "0",
+    "skill2": "10",
     "skill3": "11"
   },
   {
-    "name": "?羽獠的愛槍",
+    "name": "冴羽獠的愛槍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ch_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "15",
+    "skill3": "18"
   },
   {
     "name": "可愛P魔杖",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_cs_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "8",
+    "skill3": "14"
   },
   {
     "name": "超長距離來福槍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_eva2_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "2",
+    "skill3": "8"
   },
   {
     "name": "閃電長矛",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_eva2_wpn_16_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "32"
   },
   {
     "name": "雙刃薙刀",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_eva2_wpn_26_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "4",
+    "skill3": "22"
   },
   {
     "name": "王者之劍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ff_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "8",
+    "skill3": "15"
   },
   {
     "name": "星靈鑰匙",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ft_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "14",
+    "skill3": "15"
   },
   {
     "name": "羽毛飛鏢",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ga_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "4",
+    "skill2": "8",
+    "skill3": "15"
   },
   {
     "name": "迴力鏢",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ga_wpn_16_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "8"
   },
   {
     "name": "龍牙刀",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_gs_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "15",
+    "skill3": "18"
   },
   {
     "name": "鐵碎牙",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_inu_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "9"
   },
   {
     "name": "天生牙",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_inu_wpn_16_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "2",
+    "skill3": "4"
   },
   {
     "name": "破魔之箭",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_inu_wpn_26_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "4",
+    "skill3": "9"
   },
   {
     "name": "鑽頭粉碎者",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ka_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "4",
+    "skill2": "17",
+    "skill3": "18"
   },
   {
     "name": "風車光劍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ka_wpn_16_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "11",
+    "skill3": "14"
   },
   {
     "name": "泰坦劍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ka_wpn_26_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "15",
+    "skill3": "18"
   },
   {
     "name": "路西法之槍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ke_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "4",
+    "skill3": "22"
   },
   {
     "name": "咒蛇之槍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_mg_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "15",
+    "skill3": "18"
   },
   {
     "name": "充滿回憶的木劍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_mt_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "12",
+    "skill3": "14"
   },
   {
     "name": "黃金槍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_rg_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "19"
   },
   {
     "name": "組長的球棒",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_rg_wpn_16_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "4",
+    "skill2": "6",
+    "skill3": "18"
   },
   {
     "name": "鬼炎的匕首",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_rg_wpn_26_icon.png",
-    "skill1": "1",
-    "skill2": "3",
+    "skill1": "0",
+    "skill2": "8",
     "skill3": "11"
   },
   {
     "name": "洛克砲",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ro_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "8",
+    "skill3": "17"
   },
   {
     "name": "快速迴力鏢",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ro_wpn_16_icon.png",
     "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill2": "13",
+    "skill3": "18"
   },
   {
     "name": "金屬電鋸",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ro_wpn_26_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "4",
+    "skill3": "17"
   },
   {
     "name": "巨大木錘",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_sa_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "8",
+    "skill3": "14"
   },
   {
     "name": "豪鬼之繩",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_sf2_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "21"
   },
   {
     "name": "花梨的手套",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_sf2_wpn_16_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "4",
+    "skill3": "21"
   },
   {
     "name": "貝賽爾德的妖劍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_sl_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "22"
   },
   {
     "name": "光之劍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_sl_wpn_16_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "4",
+    "skill3": "19"
   },
   {
     "name": "玩具鎚",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_so_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "15"
   },
   {
     "name": "納克手套",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_so_wpn_16_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "4",
+    "skill3": "6"
   },
   {
     "name": "刺鐵球",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_so_wpn_26_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "4",
+    "skill2": "15",
+    "skill3": "18"
   },
   {
     "name": "天馬座護腕",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ss_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "2",
+    "skill2": "4",
+    "skill3": "18"
   },
   {
     "name": "仙女座星雲鎖鍊",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ss_wpn_16_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "8",
+    "skill3": "17"
   },
   {
     "name": "白鳥座護腕",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ss_wpn_26_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "4",
+    "skill2": "15",
+    "skill3": "17"
   },
   {
     "name": "龍爪拳套改",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ts_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "15",
+    "skill3": "17"
   },
   {
     "name": "傑洛迴力鏢",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_um_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "15",
+    "skill3": "17"
   },
   {
     "name": "朗基努斯之槍",
@@ -625,8 +625,8 @@
   {
     "name": "多龍芝的鞭子",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_yt_wpn_06_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "18"
   }
 ]
