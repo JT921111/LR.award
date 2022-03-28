@@ -483,6 +483,13 @@
     "skill3": "17"
   },
   {
+    "name": "多龍芝的鞭子",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_yt_wpn_06_icon.png",
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "18"
+  },
+  {
     "name": "朗基努斯之槍",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_03eva_icon.png",
     "skill1": "0",
@@ -621,12 +628,5 @@
     "skill1": "0",
     "skill2": "11",
     "skill3": "12"
-  },
-  {
-    "name": "多龍芝的鞭子",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_yt_wpn_06_icon.png",
-    "skill1": "0",
-    "skill2": "4",
-    "skill3": "18"
   }
 ]
