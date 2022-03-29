@@ -171,6 +171,10 @@ td:nth-of-type(9) > img {
   height: 2.4vw;
 }
 
+td:nth-of-type(10) > img, td:nth-of-type(14) > img {
+  height: 3vw;
+}
+
 .extralist {
   position: fixed;
   top: 9.5vw;
