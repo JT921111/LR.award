@@ -16,7 +16,7 @@ body {
   overflow: hidden;
 }
 
-.next {
+.next, .last {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -31,7 +31,12 @@ body {
   animation: sparkle 1.4s linear infinite;
 }
 
-.next::before {
+.last {
+  top: 0;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.next::before, .last::before {
   content: "下一步";
   position: absolute;
   top: 25%;
@@ -40,6 +45,11 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   font-size: 1.2rem;
+}
+
+.last::before {
+  content: "上一步";
+  transform: translate(-50%, -50%) rotate(180deg);
 }
 
 .re {
@@ -55,6 +65,10 @@ body {
   transform: translate(-50%, -50%) rotate(180deg); 
   text-align: center;
   font-size: 1.2rem;
+}
+
+.first {
+  display: none;
 }
 
 @keyframes sparkle {
@@ -379,12 +393,26 @@ body {
 }
 
 .main-cal {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
   position: absolute;
   top: 0;
   right: 0;
   width: calc(var(--height) * 1.38);
   height: calc(var(--height) * 0.40);
-  background-color: lime;
+}
+
+.main-cal div {
+  width: calc(var(--height) * 1.38 * 0.4);
+  height: calc(var(--height) * 0.4 * 0.4);
+  background-color: hsl(55, 85%, 80%);
+  border-radius: calc(var(--height) * 0.03);
+  font-size: 3rem;
+  text-align: center;
+  line-height: calc(var(--height) * 0.4 * 0.4);
+  box-shadow: inset calc(var(--height) * 1.38 * 0.4 * -0.04) calc(var(--height) * 1.38 * 0.4 * -0.05) calc(var(--height) * 1.38 * 0.4 * 0.08) calc(var(--height) * 1.38 * 0.4 * -0.05) #000;
 }
 
 .data-cal {
@@ -393,6 +421,9 @@ body {
   left: 0;
   width: 100%;
   height: calc(var(--height) * 0.6);
+  border-top-width: inset 2px;
+  border-top-style: double;
+  border-top-color: #222;
 }
 
 .data-list {

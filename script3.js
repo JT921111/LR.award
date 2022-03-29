@@ -157,6 +157,11 @@ $(document).ready(function () {
     $('.data-list li:nth-of-type(28) span').text(pc);
     pc = parseInt(parseFloat(powercal[30]));
     $('.data-list li:nth-of-type(29) span').text(pc);
+    console.log($('.data-list li:nth-of-type(27) span').text());
+    $('.main-cal div:nth-of-type(1)').text($('.data-list li:nth-of-type(27) span').text());
+    $('.main-cal div:nth-of-type(2)').text((parseInt($('.data-list li:nth-of-type(1) span').text()) + parseInt($('.data-list li:nth-of-type(2) span').text())) * parseInt($('.data-list li:nth-of-type(6) span').text()) / 1000 * 3);
+    $('.main-cal div:nth-of-type(3)').text($('.data-list li:nth-of-type(3) span').text());
+    $('.main-cal div:nth-of-type(4)').text(parseInt($('.data-list li:nth-of-type(4) span').text()) + parseInt($('.data-list li:nth-of-type(5) span').text()));
   }
 
   function resetequip() {
@@ -169,6 +174,7 @@ $(document).ready(function () {
     if ($('.container').hasClass('step1')) {
       collectdata();
       $('.container').removeClass('step1 up').addClass('step2 down');
+      $('.last').removeClass('first');
     } else if ($('.container').hasClass('step2')) {
       addequipw();
       $('.container').removeClass('step2 up').addClass('step3 down');
@@ -184,15 +190,18 @@ $(document).ready(function () {
       $('.container').removeClass('step5 up').addClass('step1 down');
       resetequip();
       $('.next').removeClass('re');
+      $('.last').addClass('first');
     } else {
       collectdata();
       $('.container').addClass('step2 down');
+      $('.last').removeClass('first');
     }
   }
 
   function lastpage() {
     if ($('.container').hasClass('step2')) {
       $('.container').removeClass('step2 down').addClass('step1 up');
+      $('.last').addClass('first');
     } else if ($('.container').hasClass('step3')) {
       removeequipw();
       $('.container').removeClass('step3 down').addClass('step2 up');
@@ -206,9 +215,12 @@ $(document).ready(function () {
     }
   }
 
-
   $('.next').click(function () {
     nextpage();
+  })
+
+  $('.last').click(function () {
+    lastpage();
   })
 
   document.addEventListener("keydown", function (event) {
