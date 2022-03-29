@@ -109,7 +109,7 @@ $(document).ready(function () {
     $('.data-list li:nth-of-type(4) span').text(pc);
     pc = parseInt(parseFloat(powcal[4]) + parseFloat(powercal[7]));
     $('.data-list li:nth-of-type(5) span').text(pc);
-    pc = parseInt(parseFloat(powcal[5]) + parseFloat(powercal[8]));
+    pc = parseInt(parseFloat(powcal[5]) * (100 + parseFloat(powercal[8])) / 100);
     $('.data-list li:nth-of-type(6) span').text(pc);
     pc = parseInt(parseFloat(powcal[6]) + parseFloat(powercal[9]));
     $('.data-list li:nth-of-type(7) span').text(pc);
@@ -290,7 +290,7 @@ $(document).ready(function () {
           $('.weapon h3:nth-of-type(' + j + ')').text('魔法防禦力(數值)');
           break;
         case 8:
-          $('.weapon h3:nth-of-type(' + j + ')').text('攻擊速度(數值)');
+          $('.weapon h3:nth-of-type(' + j + ')').text('攻擊速度(%)');
           break;
         case 9:
           $('.weapon h3:nth-of-type(' + j + ')').text('移動速度(數值)');
@@ -403,7 +403,7 @@ $(document).ready(function () {
           $('.shield h3:nth-of-type(' + j + ')').text('魔法防禦力(數值)');
           break;
         case 8:
-          $('.shield h3:nth-of-type(' + j + ')').text('攻擊速度(數值)');
+          $('.shield h3:nth-of-type(' + j + ')').text('攻擊速度(%)');
           break;
         case 9:
           $('.shield h3:nth-of-type(' + j + ')').text('移動速度(數值)');
@@ -516,7 +516,7 @@ $(document).ready(function () {
           $('.accessory h3:nth-of-type(' + j + ')').text('魔法防禦力(數值)');
           break;
         case 8:
-          $('.accessory h3:nth-of-type(' + j + ')').text('攻擊速度(數值)');
+          $('.accessory h3:nth-of-type(' + j + ')').text('攻擊速度(%)');
           break;
         case 9:
           $('.accessory h3:nth-of-type(' + j + ')').text('移動速度(數值)');
