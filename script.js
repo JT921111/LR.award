@@ -1,4 +1,4 @@
-$('.selection').mouseup(function () {
+$('.selection').click(function () {
   if ($(this).hasClass('point')) {
     $(this).addClass('uncheck').removeClass('check').removeClass('point');
   } else if ($(this).hasClass('check')) {
