@@ -17,41 +17,41 @@
           </div>
           <div class="data">
             <h1 for="d1">物理攻擊力</h1>
-            <input type="number" name="d1" id="d1">
+            <input type="text" value="0" name="d1" id="d1">
             <h1 for="d2">魔法攻擊力</h1>
-            <input type="number" name="d2" id="d2">
+            <input type="text" value="0" name="d2" id="d2">
             <h1 for="d3">體力</h1>
-            <input type="number" name="d3" id="d3">
+            <input type="text" value="0" name="d3" id="d3">
             <h1 for="d4">物理防禦力</h1>
-            <input type="number" name="d4" id="d4">
+            <input type="text" value="0" name="d4" id="d4">
             <h1 for="d5">魔法防禦力</h1>
-            <input type="number" name="d5" id="d5">
+            <input type="text" value="0" name="d5" id="d5">
             <h1 for="d6">攻擊速度</h1>
-            <input type="number" name="d6" id="d6">
+            <input type="text" value="0" name="d6" id="d6">
             <h1 for="d7">移動速度</h1>
-            <input type="number" name="d7" id="d7">
+            <input type="text" value="0" name="d7" id="d7">
             <h1 for="d8">攻擊範圍</h1>
-            <input type="number" name="d8" id="d8">
+            <input type="text" value="0" name="d8" id="d8">
             <h1 for="d9">暴擊機率</h1>
-            <input type="number" name="d9" id="d9">
+            <input type="text" value="0" name="d9" id="d9">
             <h1 for="d10">暴擊傷害</h1>
-            <input type="number" name="d10" id="d10">
+            <input type="text" value="0" name="d10" id="d10">
             <h1 for="d11">閃避率</h1>
-            <input type="number" name="d11" id="d11">
+            <input type="text" value="0" name="d11" id="d11">
             <h1 for="d12">命中率</h1>
-            <input type="number" name="d12" id="d12">
+            <input type="text" value="0" name="d12" id="d12">
             <h1 for="d13">技能發動率</h1>
-            <input type="number" name="d13" id="d13">
+            <input type="text" value="0" name="d13" id="d13">
             <h1 for="d14">技能閃避率</h1>
-            <input type="number" name="d14" id="d14">
+            <input type="text" value="0" name="d14" id="d14">
             <h1 for="d15">技能命中率</h1>
-            <input type="number" name="d15" id="d15">
+            <input type="text" value="0" name="d15" id="d15">
             <h1 for="d16">技能抗性</h1>
-            <input type="number" name="d16" id="d16">
+            <input type="text" value="0" name="d16" id="d16">
             <h1 for="d17">重新生產時間</h1>
-            <input type="number" name="d17" id="d17">
+            <input type="text" value="0" name="d17" id="d17">
             <h1 for="d18">礦物成本</h1>
-            <input type="number" name="d18" id="d18">
+            <input type="text" value="0" name="d18" id="d18">
             <div class="extra-spacing"></div>
           </div>
         </div>
@@ -61,11 +61,11 @@
           <div class="input-col">
             <h4 class="wp-name"></h4>
             <h3></h3>
-            <input type="number" class="up1" min="0">
+            <input type="text" value="0" class="up1" min="0">
             <h3></h3>
-            <input type="number" class="up2" min="0">
+            <input type="text" value="0" class="up2" min="0">
             <h3></h3>
-            <input type="number" class="up3" min="0">
+            <input type="text" value="0" class="up3" min="0">
           </div>
         </div>
         <div class="shield">
@@ -74,11 +74,11 @@
           <div class="input-col">
             <h4 class="sh-name"></h4>
             <h3></h3>
-            <input type="number" class="up1" min="0">
+            <input type="text" value="0" class="up4" min="0">
             <h3></h3>
-            <input type="number" class="up2" min="0">
+            <input type="text" value="0" class="up5" min="0">
             <h3></h3>
-            <input type="number" class="up3" min="0">
+            <input type="text" value="0" class="up6" min="0">
           </div>
         </div>
         <div class="accessory">
@@ -87,14 +87,137 @@
           <div class="input-col">
             <h4 class="ac-name"></h4>
             <h3></h3>
-            <input type="number" class="up1" min="0">
+            <input type="text" value="0" class="up7" min="0">
             <h3></h3>
-            <input type="number" class="up2" min="0">
+            <input type="text" value="0" class="up8" min="0">
             <h3></h3>
-            <input type="number" class="up3" min="0">
+            <input type="text" value="0" class="up9" min="0">
           </div>
         </div>
-        <div class="cal"></div>
+        <div class="cal">
+          <div class="final-ranger"></div>
+          <div class="main-cal"></div>
+          <div class="data-cal">
+            <ul class="data-list">
+              <li>
+                <h5>物理<br>攻擊力</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>魔法<br>攻擊力</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>體力</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>物理<br>防禦力</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>魔法<br>防禦力</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>攻擊速度</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>移動速度</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>攻擊範圍</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>暴擊機率</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>暴擊傷害</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>連擊機率</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>閃避率</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>命中率</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>必中率</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>技能<br>發動率</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>技能再次<br>發動率</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>技能<br>閃避率</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>技能<br>命中率</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>技能<br>必中率</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>技能抗性</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>昏迷抗性</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>靜止抗性</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>擊退抗性</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>暴擊抗性</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>技能<br>冷卻減少</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>重新<br>生產時間</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>礦物成本</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>物理傷害<br>反射率</h5>
+                <span></span>
+              </li>
+              <li>
+                <h5>魔法傷害<br>反射率</h5>
+                <span></span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </body>

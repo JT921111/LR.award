@@ -23,11 +23,11 @@ $(document).ready(function () {
       $('.sh-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '">')
     })
     $('.sh-list').append('<h2>6星</h2>')
-    /*const data2 = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/shield6.json");
+    const data2 = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/shield6.json");
     const getdata2 = await data2.json();
     $.each(getdata2, function (i) {
       $('.sh-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '">')
-    })*/
+    })
     $('.sh-list').append('<div class="extra-spacing"></div>');
   }
   
@@ -53,48 +53,174 @@ $(document).ready(function () {
 
   accessory();
 
-  function nextpage() {
-    if ($('.container').hasClass('step1')) {
-      $('.container').removeClass('step1').addClass('step2');
-    } else if ($('.container').hasClass('step2')) {
-      $('.container').removeClass('step2').addClass('step3');
-    } else if ($('.container').hasClass('step3')) {
-      $('.container').removeClass('step3').addClass('step4');
-    } else if ($('.container').hasClass('step4')) {
-      $('.container').removeClass('step4').addClass('step5');
-      $('.next').addClass('re');
-    } else if ($('.container').hasClass('step5')) {
-      $('.container').removeClass('step5').addClass('step1');
-      //resetequip();
-      $('.next').removeClass('re');
-    } else {
-      $('.container').addClass('step2');
+  const powcal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+  function collectdata() {
+    $.each(powcal, function(i) {
+      var j = i + 1;
+      powcal[i] = $('#d' + j).val();
+    })
+  }
+
+  function addequipw() {
+    for (var i = 1; i <= 3; i++) {
+      powercal[powerup[i - 1]] += parseFloat($('.weapon .up' + i).val());
     }
   }
+
+  function addequips() {
+    for (var i = 4; i <= 6; i++) {
+      powercal[powerup[i - 1]] += parseFloat($('.shield .up' + i).val());
+    }
+  }
+
+  function addequipa() {
+    for (var i = 7; i <= 9; i++) {
+      powercal[powerup[i - 1]] += parseFloat($('.accessory .up' + i).val());
+    }
+  }
+
+  function removeequipw() {
+    for (var i = 1; i <= 3; i++) {
+      powercal[powerup[i - 1]] -= parseFloat($('.weapon .up' + i).val());
+    }
+  }
+
+  function removeequips() {
+    for (var i = 4; i <= 6; i++) {
+      powercal[powerup[i - 1]] -= parseFloat($('.shield .up' + i).val());
+    }
+  }
+
+  function removeequipa() {
+    for (var i = 7; i <= 9; i++) {
+      powercal[powerup[i - 1]] -= parseFloat($('.accessory .up' + i).val());
+    }
+  }
+
+  function equipcal() {
+    let pc = parseInt(parseFloat(powcal[0]) * (100 + parseFloat(powercal[0]) + parseFloat(powercal[23])) / 100 + parseFloat(powercal[1]));
+    $('.data-list li:nth-of-type(1) span').text(pc);
+    pc = parseInt(parseFloat(powcal[1]) * (100 + parseFloat(powercal[2]) + parseFloat(powercal[23])) / 100 + parseFloat(powercal[3]));
+    $('.data-list li:nth-of-type(2) span').text(pc);
+    pc = parseInt(parseFloat(powcal[2]) * (100 + parseFloat(powercal[4])) / 100 + parseFloat(powercal[5]));
+    $('.data-list li:nth-of-type(3) span').text(pc);
+    pc = parseInt(parseFloat(powcal[3]) + parseFloat(powercal[6]));
+    $('.data-list li:nth-of-type(4) span').text(pc);
+    pc = parseInt(parseFloat(powcal[4]) + parseFloat(powercal[7]));
+    $('.data-list li:nth-of-type(5) span').text(pc);
+    pc = parseInt(parseFloat(powcal[5]) + parseFloat(powercal[8]));
+    $('.data-list li:nth-of-type(6) span').text(pc);
+    pc = parseInt(parseFloat(powcal[6]) + parseFloat(powercal[9]));
+    $('.data-list li:nth-of-type(7) span').text(pc);
+    pc = parseInt(parseFloat(powcal[7]) * (100 + parseFloat(powercal[10])) / 100);
+    $('.data-list li:nth-of-type(8) span').text(pc);
+    pc = parseInt(parseFloat(powcal[8]) + parseFloat(powercal[11]));
+    $('.data-list li:nth-of-type(9) span').text(pc);
+    pc = parseInt(parseFloat(powcal[9]) + parseFloat(powercal[12]));
+    $('.data-list li:nth-of-type(10) span').text(pc);
+    pc = parseInt(parseFloat(powercal[24]));
+    $('.data-list li:nth-of-type(11) span').text(pc);
+    pc = parseInt(parseFloat(powcal[10]) + parseFloat(powercal[13]));
+    $('.data-list li:nth-of-type(12) span').text(pc);
+    pc = parseInt(parseFloat(powcal[11]) + parseFloat(powercal[14]));
+    $('.data-list li:nth-of-type(13) span').text(pc);
+    pc = parseInt(parseFloat(powercal[26]));
+    $('.data-list li:nth-of-type(14) span').text(pc);
+    pc = parseInt(parseFloat(powcal[12]) + parseFloat(powercal[15]));
+    $('.data-list li:nth-of-type(15) span').text(pc);
+    pc = parseInt(parseFloat(powercal[25]));
+    $('.data-list li:nth-of-type(16) span').text(pc);
+    pc = parseInt(parseFloat(powcal[13]) + parseFloat(powercal[16]));
+    $('.data-list li:nth-of-type(17) span').text(pc);
+    pc = parseInt(parseFloat(powcal[14]) + parseFloat(powercal[17]));
+    $('.data-list li:nth-of-type(18) span').text(pc);
+    pc = parseInt(parseFloat(powercal[27]));
+    $('.data-list li:nth-of-type(19) span').text(pc);
+    pc = parseInt(parseFloat(powcal[15]) + parseFloat(powercal[18]));
+    $('.data-list li:nth-of-type(20) span').text(pc);
+    pc = parseInt(parseFloat(powercal[21]));
+    $('.data-list li:nth-of-type(21) span').text(pc);
+    pc = parseInt(parseFloat(powercal[22]));
+    $('.data-list li:nth-of-type(22) span').text(pc);
+    pc = parseInt(parseFloat(powercal[32]));
+    $('.data-list li:nth-of-type(23) span').text(pc);
+    pc = parseInt(parseFloat(powercal[28]));
+    $('.data-list li:nth-of-type(24) span').text(pc);
+    pc = parseInt(parseFloat(powercal[31]));
+    $('.data-list li:nth-of-type(25) span').text(pc);
+    pc = parseInt(parseFloat(powcal[16]) * (100 - parseFloat(powercal[19])) / 100);
+    $('.data-list li:nth-of-type(26) span').text(pc);
+    pc = parseInt(parseFloat(powcal[17]) * (100 - parseFloat(powercal[20])) / 100);
+    $('.data-list li:nth-of-type(27) span').text(pc);
+    pc = parseInt(parseFloat(powercal[29]));
+    $('.data-list li:nth-of-type(28) span').text(pc);
+    pc = parseInt(parseFloat(powercal[30]));
+    $('.data-list li:nth-of-type(29) span').text(pc);
+  }
+
+  function resetequip() {
+    $.each(powercal, function (i) {
+      powercal[i] = 0;
+    })
+  }
+
+  function nextpage() {
+    if ($('.container').hasClass('step1')) {
+      collectdata();
+      $('.container').removeClass('step1 up').addClass('step2 down');
+    } else if ($('.container').hasClass('step2')) {
+      addequipw();
+      $('.container').removeClass('step2 up').addClass('step3 down');
+    } else if ($('.container').hasClass('step3')) {
+      addequips();
+      $('.container').removeClass('step3 up').addClass('step4 down');
+    } else if ($('.container').hasClass('step4')) {
+      addequipa();
+      $('.container').removeClass('step4 up').addClass('step5 down');
+      $('.next').addClass('re');
+      equipcal();
+    } else if ($('.container').hasClass('step5')) {
+      $('.container').removeClass('step5 up').addClass('step1 down');
+      resetequip();
+      $('.next').removeClass('re');
+    } else {
+      collectdata();
+      $('.container').addClass('step2 down');
+    }
+  }
+
+  function lastpage() {
+    if ($('.container').hasClass('step2')) {
+      $('.container').removeClass('step2 down').addClass('step1 up');
+    } else if ($('.container').hasClass('step3')) {
+      removeequipw();
+      $('.container').removeClass('step3 down').addClass('step2 up');
+    } else if ($('.container').hasClass('step4')) {
+      removeequips();
+      $('.container').removeClass('step4 down').addClass('step3 up');
+    } else if ($('.container').hasClass('step5')) {
+      removeequipa();
+      $('.container').removeClass('step5 down').addClass('step4 up');
+      $('.next').removeClass('re');
+    }
+  }
+
 
   $('.next').click(function () {
     nextpage();
   })
 
-  function addequip() {
-    for (var i = 1; i <= 3; i++) {
-      if (powerup[i - 1] == 24) {
-        powercal[0] += $('up' + i).val();
-        powercal[2] += $('up' + i).val();
-      } else {
-        powercal[powerup[i - 1]] += $('up' + i).val();
-      }
-    }
-  }
-
   document.addEventListener("keydown", function (event) {
     if (event.code == "ArrowDown") {
       nextpage();
+    } else if (event.code == "ArrowUp") {
+      lastpage();
     }
   })
 
-  const powerup = [0, 0, 0];
-  const powercal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] //length 33
+  const powerup = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
+  const powercal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] //length 33
   //0 物攻%
   //1 物攻
   //2 魔攻%
@@ -133,9 +259,9 @@ $(document).ready(function () {
     $('.wp-list > img').removeClass('choose');
     $(this).addClass('choose');
     $('.weapon h4').text($(this).attr('title'));
-    powerup[0] = parseInt($(this).attr('data-promote-1'));
-    powerup[1] = parseInt($(this).attr('data-promote-2'));
-    powerup[2] = parseInt($(this).attr('data-promote-3'));
+    powerup[0] = parseFloat($(this).attr('data-promote-1'));
+    powerup[1] = parseFloat($(this).attr('data-promote-2'));
+    powerup[2] = parseFloat($(this).attr('data-promote-3'));
     for (var i = 0; i < 3; i++) {
       let j = i + 1;
       switch (powerup[i]) {
@@ -170,7 +296,7 @@ $(document).ready(function () {
           $('.weapon h3:nth-of-type(' + j + ')').text('移動速度(數值)');
           break;
         case 10:
-          $('.weapon h3:nth-of-type(' + j + ')').text('攻擊範圍(數值)');
+          $('.weapon h3:nth-of-type(' + j + ')').text('攻擊範圍(%)');
           break;
         case 11:
           $('.weapon h3:nth-of-type(' + j + ')').text('暴擊機率(%)');
@@ -246,11 +372,11 @@ $(document).ready(function () {
     $('.sh-list > img').removeClass('choose');
     $(this).addClass('choose');
     $('.shield h4').text($(this).attr('title'));
-    powerup[0] = parseInt($(this).attr('data-promote-1'));
-    powerup[1] = parseInt($(this).attr('data-promote-2'));
-    powerup[2] = parseInt($(this).attr('data-promote-3'));
-    for (var i = 0; i < 3; i++) {
-      let j = i + 1;
+    powerup[3] = parseFloat($(this).attr('data-promote-1'));
+    powerup[4] = parseFloat($(this).attr('data-promote-2'));
+    powerup[5] = parseFloat($(this).attr('data-promote-3'));
+    for (var i = 3; i < 6; i++) {
+      let j = i - 2;
       switch (powerup[i]) {
         case 0:
           $('.shield h3:nth-of-type(' + j + ')').text('物理攻擊力(%)');
@@ -283,7 +409,7 @@ $(document).ready(function () {
           $('.shield h3:nth-of-type(' + j + ')').text('移動速度(數值)');
           break;
         case 10:
-          $('.shield h3:nth-of-type(' + j + ')').text('攻擊範圍(數值)');
+          $('.shield h3:nth-of-type(' + j + ')').text('攻擊範圍(%)');
           break;
         case 11:
           $('.shield h3:nth-of-type(' + j + ')').text('暴擊機率(%)');
@@ -359,11 +485,11 @@ $(document).ready(function () {
     $('.ac-list > img').removeClass('choose');
     $(this).addClass('choose');
     $('.accessory h4').text($(this).attr('title'));
-    powerup[0] = parseInt($(this).attr('data-promote-1'));
-    powerup[1] = parseInt($(this).attr('data-promote-2'));
-    powerup[2] = parseInt($(this).attr('data-promote-3'));
-    for (var i = 0; i < 3; i++) {
-      let j = i + 1;
+    powerup[6] = parseFloat($(this).attr('data-promote-1'));
+    powerup[7] = parseFloat($(this).attr('data-promote-2'));
+    powerup[8] = parseFloat($(this).attr('data-promote-3'));
+    for (var i = 6; i < 9; i++) {
+      let j = i - 5;
       switch (powerup[i]) {
         case 0:
           $('.accessory h3:nth-of-type(' + j + ')').text('物理攻擊力(%)');
@@ -396,7 +522,7 @@ $(document).ready(function () {
           $('.accessory h3:nth-of-type(' + j + ')').text('移動速度(數值)');
           break;
         case 10:
-          $('.accessory h3:nth-of-type(' + j + ')').text('攻擊範圍(數值)');
+          $('.accessory h3:nth-of-type(' + j + ')').text('攻擊範圍(%)');
           break;
         case 11:
           $('.accessory h3:nth-of-type(' + j + ')').text('暴擊機率(%)');
