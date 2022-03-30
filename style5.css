@@ -41,6 +41,63 @@ body {
   z-index: 10;
 }
 
+.scroller .scroll-tag {
+  display: none;
+  position: absolute;
+  left: 6.5vw;
+  width: 15vw;
+  height: 4vw;
+  background: hsl(17, 94%, 70%);
+  border-radius: 1vw;
+  text-align: center;
+  line-height: 4vw;
+}
+
+.scroller a:hover + .scroll-tag, .scroller a:focus + .scroll-tag {
+  display: inline-block;
+}
+
+.scroller .scroll-tag::after {
+  content: "";
+  position: absolute;
+  right: 99%;
+  top: 0.5vw;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-left-width: 0;
+  border-right-width: 1vw;
+  border-top-width: 1.5vw;
+  border-bottom-width: 1.5vw;
+  border-right-color: hsl(17, 94%, 70%);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.scroller > .scroll-tag:nth-of-type(2) {
+  top: 0;
+}
+
+.scroller > .scroll-tag:nth-of-type(3) {
+  top: 4vw;
+}
+
+.scroller > .scroll-tag:nth-of-type(4) {
+  top: 8vw;
+}
+
+.scroller > .next-tag:nth-of-type(2) {
+  top: calc(60vh - 12vw);
+}
+
+.scroller > .next-tag:nth-of-type(3) {
+  top: calc(60vh - 8vw);
+}
+
+.scroller > .next-tag:nth-of-type(4) {
+  top: calc(60vh - 4vw);
+}
+
 .scroller .next {
   margin-top: calc(60vh - 12vw);
 }
