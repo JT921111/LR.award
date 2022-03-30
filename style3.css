@@ -404,8 +404,19 @@ body {
   height: calc(var(--height) * 0.40);
 }
 
-.main-cal div {
-  width: calc(var(--height) * 1.38 * 0.4);
+.main-cal div.mimg {
+  display: flex;
+  justify-content: center;
+  width: calc(var(--height) * 1.38 * 0.1);
+  height: calc(var(--height) * 0.4 * 0.2);
+}
+
+.main-cal div.mimg img {
+  height: 100%;
+}
+
+.main-cal div.mc {
+  width: calc(var(--height) * 1.38 * 0.38);
   height: calc(var(--height) * 0.4 * 0.4);
   background-color: hsl(55, 85%, 80%);
   border-radius: calc(var(--height) * 0.03);

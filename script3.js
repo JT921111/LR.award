@@ -158,10 +158,10 @@ $(document).ready(function () {
     pc = parseInt(parseFloat(powercal[30]));
     $('.data-list li:nth-of-type(29) span').text(pc);
     console.log($('.data-list li:nth-of-type(27) span').text());
-    $('.main-cal div:nth-of-type(1)').text($('.data-list li:nth-of-type(27) span').text());
-    $('.main-cal div:nth-of-type(2)').text(parseInt((parseInt($('.data-list li:nth-of-type(1) span').text()) + parseInt($('.data-list li:nth-of-type(2) span').text())) * parseInt($('.data-list li:nth-of-type(6) span').text()) / 1000 * 3));
-    $('.main-cal div:nth-of-type(3)').text($('.data-list li:nth-of-type(3) span').text());
-    $('.main-cal div:nth-of-type(4)').text(parseInt($('.data-list li:nth-of-type(4) span').text()) + parseInt($('.data-list li:nth-of-type(5) span').text()));
+    $('.main-cal div:nth-of-type(2)').text($('.data-list li:nth-of-type(27) span').text());
+    $('.main-cal div:nth-of-type(4)').text(parseInt((parseInt($('.data-list li:nth-of-type(1) span').text()) + parseInt($('.data-list li:nth-of-type(2) span').text())) * parseInt($('.data-list li:nth-of-type(6) span').text()) / 1000 * 3));
+    $('.main-cal div:nth-of-type(6)').text($('.data-list li:nth-of-type(3) span').text());
+    $('.main-cal div:nth-of-type(8)').text(parseInt($('.data-list li:nth-of-type(4) span').text()) + parseInt($('.data-list li:nth-of-type(5) span').text()));
   }
 
   function resetequip() {
