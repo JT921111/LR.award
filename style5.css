@@ -8,12 +8,54 @@
 body {
   width: 100%;
   padding-bottom: 5rem;
+  overflow-x: hidden;
+}
+
+.scroller {
+  position: fixed;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 3%;
+  width: 4vw;
+  height: 60vh;
+}
+
+.bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.2vw;
+  height: calc(100% - 4vw);
+  border-radius: 0.6vw;
+  background-color: hsl(250, 20%, 88%);
+  z-index: -10;
+}
+
+.scroller a {
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+  background-color: hsl(90, 85%, 65%);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.scroller .next {
+  margin-top: calc(60vh - 12vw);
+}
+
+.scroller a:before {
+  content:     "";
+  display:     block;
+  padding-top: 100%;
+  z-index: 10;
 }
 
 .copied {
   position: fixed;
   top : -6rem;
-  left: 50%;
+  left: 50vw;
   width: 12rem;
   height: 4rem;
   background: hsl(17, 94%, 80%);
@@ -35,7 +77,7 @@ body {
 
 @keyframes hide {
   from {
-    top: 15%;
+    top: 15vw;
   } to {
     top: -6rem;
   }
@@ -45,17 +87,17 @@ body {
   from {
     top: -6rem;
   } to {
-    top: 15%;
+    top: 15vw;
   }
 }
 
 .header {
-  margin-left: 18%;
-  margin-right: 18%;
+  margin-left: 18vw;
+  margin-right: 18vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 64%;
+  width: 64vw;
   height: 6rem;
   border-bottom: 2px solid;
 }
@@ -66,7 +108,7 @@ h1 {
 
 h2 {
   margin: 2rem;
-  margin-left: 15%;
+  margin-left: 15vw;
   margin-bottom: 1rem;
   font-size: 1.6rem;
 }
@@ -76,9 +118,9 @@ h2 {
   align-items: center;
   margin-top: 2rem;
   display: flex;
-  width: 72%;
-  padding-left: 14%;
-  padding-right: 14%;
+  width: 72vw;
+  padding-left: 14vw;
+  padding-right: 14vw;
 }
 
 .steps > img {
