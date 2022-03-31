@@ -4,13 +4,13 @@ $(document).ready(function () {
     const data = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/weapon7.json");
     const getdata = await data.json();
     $.each(getdata, function (i) {
-      $('.wp-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '">')
+      $('.wp-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '" alt="圖片資源缺失">')
     })
     $('.wp-list').append('<h2>6星</h2>')
     const data2 = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/weapon6.json");
     const getdata2 = await data2.json();
     $.each(getdata2, function (i) {
-      $('.wp-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '">')
+      $('.wp-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '" alt="圖片資源缺失">')
     })
     $('.wp-list').append('<div class="extra-spacing"></div>');
   }
@@ -20,13 +20,13 @@ $(document).ready(function () {
     const data = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/shield7.json");
     const getdata = await data.json();
     $.each(getdata, function (i) {
-      $('.sh-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '">')
+      $('.sh-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '" alt="圖片資源缺失">')
     })
     $('.sh-list').append('<h2>6星</h2>')
     const data2 = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/shield6.json");
     const getdata2 = await data2.json();
     $.each(getdata2, function (i) {
-      $('.sh-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '">')
+      $('.sh-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '" alt="圖片資源缺失">')
     })
     $('.sh-list').append('<div class="extra-spacing"></div>');
   }
@@ -36,13 +36,13 @@ $(document).ready(function () {
     const data = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/accessory7.json");
     const getdata = await data.json();
     $.each(getdata, function (i) {
-      $('.ac-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '">')
+      $('.ac-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '" alt="圖片資源缺失">')
     })
     $('.ac-list').append('<h2>6星</h2>')
     const data2 = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/accessory6.json");
     const getdata2 = await data2.json();
     $.each(getdata2, function (i) {
-      $('.ac-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '">')
+      $('.ac-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '" alt="圖片資源缺失">')
     })
     $('.ac-list').append('<div class="extra-spacing"></div>');
   }
