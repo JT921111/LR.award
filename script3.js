@@ -39,11 +39,11 @@ $(document).ready(function () {
       $('.ac-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '">')
     })
     $('.ac-list').append('<h2>6星</h2>')
-    /*const data2 = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/accessory6.json");
+    const data2 = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/accessory6.json");
     const getdata2 = await data2.json();
     $.each(getdata2, function (i) {
       $('.ac-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '">')
-    })*/
+    })
     $('.ac-list').append('<div class="extra-spacing"></div>');
   }
 
