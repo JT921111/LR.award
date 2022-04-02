@@ -1,159 +1,5 @@
 [
   {
-    "name": "愛心皇冠",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0006_icon.png",
-    "skill1": "5",
-    "skill2": "7",
-    "skill3": "19"
-  },
-  {
-    "name": "和平面具",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0016_icon.png",
-    "skill1": "5",
-    "skill2": "6",
-    "skill3": "13"
-  },
-  {
-    "name": "神聖盔甲",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0026_icon.png",
-    "skill1": "4",
-    "skill2": "6",
-    "skill3": "7"
-  },
-  {
-    "name": "雲翼頭盔",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0036_icon.png",
-    "skill1": "0",
-    "skill2": "5",
-    "skill3": "18"
-  },
-  {
-    "name": "雲翼之靴",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0046_icon.png",
-    "skill1": "9",
-    "skill2": "18",
-    "skill3": "20"
-  },
-  {
-    "name": "冥神外套",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0056_icon.png",
-    "skill1": "2",
-    "skill2": "5",
-    "skill3": "7"
-  },
-  {
-    "name": "守護者之盾",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0066_icon.png",
-    "skill1": "4",
-    "skill2": "5",
-    "skill3": "18"
-  },
-  {
-    "name": "雲翼眼鏡",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0076_icon.png",
-    "skill1": "5",
-    "skill2": "7",
-    "skill3": "13"
-  },
-  {
-    "name": "冥神手套",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0086_icon.png",
-    "skill1": "5",
-    "skill2": "8",
-    "skill3": "18"
-  },
-  {
-    "name": "冥神短褲",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0096_icon.png",
-    "skill1": "3",
-    "skill2": "4",
-    "skill3": "6"
-  },
-  {
-    "name": "司令官外套",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0106_icon.png",
-    "skill1": "1",
-    "skill2": "5",
-    "skill3": "11"
-  },
-  {
-    "name": "守護騎士披風",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_006_icon.png",
-    "skill1": "5",
-    "skill2": "6",
-    "skill3": "7"
-  },
-  {
-    "name": "莎莉女王手套",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_016_icon.png",
-    "skill1": "4",
-    "skill2": "16",
-    "skill3": "18"
-  },
-  {
-    "name": "花瓣鞋子",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_026_icon.png",
-    "skill1": "5",
-    "skill2": "6",
-    "skill3": "7"
-  },
-  {
-    "name": "女神兔兔手環",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_036_icon.png",
-    "skill1": "4",
-    "skill2": "16",
-    "skill3": "18"
-  },
-  {
-    "name": "雷電熊大頭盔",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_046_icon.png",
-    "skill1": "4",
-    "skill2": "9",
-    "skill3": "18"
-  },
-  {
-    "name": "萬聖節裝",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_056_icon.png",
-    "skill1": "4",
-    "skill2": "18",
-    "skill3": "20"
-  },
-  {
-    "name": "劉備的服裝",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_066_icon.png",
-    "skill1": "4",
-    "skill2": "9",
-    "skill3": "18"
-  },
-  {
-    "name": "關羽的頭巾",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_076_icon.png",
-    "skill1": "6",
-    "skill2": "13",
-    "skill3": "22"
-  },
-  {
-    "name": "張飛的長靴",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_086_icon.png",
-    "skill1": "4",
-    "skill2": "9",
-    "skill3": "16"
-  },
-  {
-    "name": "月光之盾",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_096_icon.png",
-    "skill1": "4",
-    "skill2": "13",
-    "skill3": "16"
-  },
-  {
-    "name": "聖誕老人上衣",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_106_icon.png",
-    "skill1": "0",
-    "skill2": "4",
-    "skill3": "16"
-  },
-  {
     "name": "呂布的褲子",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_2204_amr_06_icon.png",
     "skill1": "4",
@@ -600,6 +446,160 @@
     "skill1": "4",
     "skill2": "6",
     "skill3": "18"
+  },
+  {
+    "name": "愛心皇冠",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0006_icon.png",
+    "skill1": "5",
+    "skill2": "7",
+    "skill3": "19"
+  },
+  {
+    "name": "和平面具",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0016_icon.png",
+    "skill1": "5",
+    "skill2": "6",
+    "skill3": "13"
+  },
+  {
+    "name": "神聖盔甲",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0026_icon.png",
+    "skill1": "4",
+    "skill2": "6",
+    "skill3": "7"
+  },
+  {
+    "name": "雲翼頭盔",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0036_icon.png",
+    "skill1": "0",
+    "skill2": "5",
+    "skill3": "18"
+  },
+  {
+    "name": "雲翼之靴",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0046_icon.png",
+    "skill1": "9",
+    "skill2": "18",
+    "skill3": "20"
+  },
+  {
+    "name": "冥神外套",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0056_icon.png",
+    "skill1": "2",
+    "skill2": "5",
+    "skill3": "7"
+  },
+  {
+    "name": "守護者之盾",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0066_icon.png",
+    "skill1": "4",
+    "skill2": "5",
+    "skill3": "18"
+  },
+  {
+    "name": "雲翼眼鏡",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0076_icon.png",
+    "skill1": "5",
+    "skill2": "7",
+    "skill3": "13"
+  },
+  {
+    "name": "冥神手套",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0086_icon.png",
+    "skill1": "5",
+    "skill2": "8",
+    "skill3": "18"
+  },
+  {
+    "name": "冥神短褲",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0096_icon.png",
+    "skill1": "3",
+    "skill2": "4",
+    "skill3": "6"
+  },
+  {
+    "name": "司令官外套",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_0106_icon.png",
+    "skill1": "1",
+    "skill2": "5",
+    "skill3": "11"
+  },
+  {
+    "name": "守護騎士披風",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_006_icon.png",
+    "skill1": "5",
+    "skill2": "6",
+    "skill3": "7"
+  },
+  {
+    "name": "莎莉女王手套",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_016_icon.png",
+    "skill1": "4",
+    "skill2": "16",
+    "skill3": "18"
+  },
+  {
+    "name": "花瓣鞋子",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_026_icon.png",
+    "skill1": "5",
+    "skill2": "6",
+    "skill3": "7"
+  },
+  {
+    "name": "女神兔兔手環",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_036_icon.png",
+    "skill1": "4",
+    "skill2": "16",
+    "skill3": "18"
+  },
+  {
+    "name": "雷電熊大頭盔",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_046_icon.png",
+    "skill1": "4",
+    "skill2": "9",
+    "skill3": "18"
+  },
+  {
+    "name": "萬聖節裝",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_056_icon.png",
+    "skill1": "4",
+    "skill2": "18",
+    "skill3": "20"
+  },
+  {
+    "name": "劉備的服裝",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_066_icon.png",
+    "skill1": "4",
+    "skill2": "9",
+    "skill3": "18"
+  },
+  {
+    "name": "關羽的頭巾",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_076_icon.png",
+    "skill1": "6",
+    "skill2": "13",
+    "skill3": "22"
+  },
+  {
+    "name": "張飛的長靴",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_086_icon.png",
+    "skill1": "4",
+    "skill2": "9",
+    "skill3": "16"
+  },
+  {
+    "name": "月光之盾",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_096_icon.png",
+    "skill1": "4",
+    "skill2": "13",
+    "skill3": "16"
+  },
+  {
+    "name": "聖誕老人上衣",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_amr_evt_106_icon.png",
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "16"
   },
   {
     "name": "6星護具",

@@ -1,180 +1,5 @@
 [
   {
-    "name": "暗黑之劍",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0006_icon.png",
-    "skill1": "0",
-    "skill2": "1",
-    "skill3": "3"
-  },
-  {
-    "name": "黑魔法魔杖",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0016_icon.png",
-    "skill1": "2",
-    "skill2": "3",
-    "skill3": "18"
-  },
-  {
-    "name": "月亮魔棒",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0026_icon.png",
-    "skill1": "2",
-    "skill2": "3",
-    "skill3": "15"
-  },
-  {
-    "name": "星球狙擊槍",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0036_icon.png",
-    "skill1": "0",
-    "skill2": "10",
-    "skill3": "12"
-  },
-  {
-    "name": "守護者之弓",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0046_icon.png",
-    "skill1": "0",
-    "skill2": "8",
-    "skill3": "15"
-  },
-  {
-    "name": "冥神之鎚",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0056_icon.png",
-    "skill1": "1",
-    "skill2": "4",
-    "skill3": "6"
-  },
-  {
-    "name": "四葉迴旋鏢",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0066_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "9"
-  },
-  {
-    "name": "惡魔尾鞭子",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0076_icon.png",
-    "skill1": "1",
-    "skill2": "2",
-    "skill3": "11"
-  },
-  {
-    "name": "熔岩之鋸",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0086_icon.png",
-    "skill1": "1",
-    "skill2": "11",
-    "skill3": "12"
-  },
-  {
-    "name": "銀河掃帚",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0096_icon.png",
-    "skill1": "3",
-    "skill2": "4",
-    "skill3": "7"
-  },
-  {
-    "name": "榮耀魔棒",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0106_icon.png",
-    "skill1": "2",
-    "skill2": "3",
-    "skill3": "19"
-  },
-  {
-    "name": "星光短刀",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_006_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "11"
-  },
-  {
-    "name": "莎莉女王魔棒",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_016_icon.png",
-    "skill1": "0",
-    "skill2": "4",
-    "skill3": "17"
-  },
-  {
-    "name": "花瓣魔棒",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_026_icon.png",
-    "skill1": "1",
-    "skill2": "3",
-    "skill3": "12"
-  },
-  {
-    "name": "女神兔兔棒",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_036_icon.png",
-    "skill1": "0",
-    "skill2": "4",
-    "skill3": "6"
-  },
-  {
-    "name": "雷電熊大手套",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_046_icon.png",
-    "skill1": "0",
-    "skill2": "8",
-    "skill3": "10"
-  },
-  {
-    "name": "黑貓魔杖",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_056_icon.png",
-    "skill1": "3",
-    "skill2": "4",
-    "skill3": "6"
-  },
-  {
-    "name": "劉備的雌雄雙劍",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_066_icon.png",
-    "skill1": "1",
-    "skill2": "8",
-    "skill3": "17"
-  },
-  {
-    "name": "關羽的青龍偃月刀",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_076_icon.png",
-    "skill1": "2",
-    "skill2": "11",
-    "skill3": "15"
-  },
-  {
-    "name": "張飛的蛇矛",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_086_icon.png",
-    "skill1": "0",
-    "skill2": "11",
-    "skill3": "17"
-  },
-  {
-    "name": "月光魔棒",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_096_icon.png",
-    "skill1": "0",
-    "skill2": "4",
-    "skill3": "10"
-  },
-  {
-    "name": "聖誕魔術師魔杖",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_106_icon.png",
-    "skill1": "0",
-    "skill2": "4",
-    "skill3": "18"
-  },
-  {
-    "name": "雪球製造機",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_126_icon.png",
-    "skill1": "1",
-    "skill2": "4",
-    "skill3": "15"
-  },
-  {
-    "name": "古代神權杖",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_gr_016_icon.png",
-    "skill1": "0",
-    "skill2": "8",
-    "skill3": "21"
-  },
-  {
-    "name": "古代神連枷",
-    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_gr_026_icon.png",
-    "skill1": "2",
-    "skill2": "15",
-    "skill3": "22"
-  },
-  {
     "name": "索爾的雷槌",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_2204_wpn_06_icon.png",
     "skill1": "0",
@@ -614,6 +439,181 @@
     "skill1": "2",
     "skill2": "4",
     "skill3": "8"
+  },
+  {
+    "name": "暗黑之劍",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0006_icon.png",
+    "skill1": "0",
+    "skill2": "1",
+    "skill3": "3"
+  },
+  {
+    "name": "黑魔法魔杖",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0016_icon.png",
+    "skill1": "2",
+    "skill2": "3",
+    "skill3": "18"
+  },
+  {
+    "name": "月亮魔棒",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0026_icon.png",
+    "skill1": "2",
+    "skill2": "3",
+    "skill3": "15"
+  },
+  {
+    "name": "星球狙擊槍",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0036_icon.png",
+    "skill1": "0",
+    "skill2": "10",
+    "skill3": "12"
+  },
+  {
+    "name": "守護者之弓",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0046_icon.png",
+    "skill1": "0",
+    "skill2": "8",
+    "skill3": "15"
+  },
+  {
+    "name": "冥神之鎚",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0056_icon.png",
+    "skill1": "1",
+    "skill2": "4",
+    "skill3": "6"
+  },
+  {
+    "name": "四葉迴旋鏢",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0066_icon.png",
+    "skill1": "1",
+    "skill2": "3",
+    "skill3": "9"
+  },
+  {
+    "name": "惡魔尾鞭子",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0076_icon.png",
+    "skill1": "1",
+    "skill2": "2",
+    "skill3": "11"
+  },
+  {
+    "name": "熔岩之鋸",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0086_icon.png",
+    "skill1": "1",
+    "skill2": "11",
+    "skill3": "12"
+  },
+  {
+    "name": "銀河掃帚",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0096_icon.png",
+    "skill1": "3",
+    "skill2": "4",
+    "skill3": "7"
+  },
+  {
+    "name": "榮耀魔棒",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_0106_icon.png",
+    "skill1": "2",
+    "skill2": "3",
+    "skill3": "19"
+  },
+  {
+    "name": "星光短刀",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_006_icon.png",
+    "skill1": "1",
+    "skill2": "3",
+    "skill3": "11"
+  },
+  {
+    "name": "莎莉女王魔棒",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_016_icon.png",
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "17"
+  },
+  {
+    "name": "花瓣魔棒",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_026_icon.png",
+    "skill1": "1",
+    "skill2": "3",
+    "skill3": "12"
+  },
+  {
+    "name": "女神兔兔棒",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_036_icon.png",
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "6"
+  },
+  {
+    "name": "雷電熊大手套",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_046_icon.png",
+    "skill1": "0",
+    "skill2": "8",
+    "skill3": "10"
+  },
+  {
+    "name": "黑貓魔杖",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_056_icon.png",
+    "skill1": "3",
+    "skill2": "4",
+    "skill3": "6"
+  },
+  {
+    "name": "劉備的雌雄雙劍",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_066_icon.png",
+    "skill1": "1",
+    "skill2": "8",
+    "skill3": "17"
+  },
+  {
+    "name": "關羽的青龍偃月刀",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_076_icon.png",
+    "skill1": "2",
+    "skill2": "11",
+    "skill3": "15"
+  },
+  {
+    "name": "張飛的蛇矛",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_086_icon.png",
+    "skill1": "0",
+    "skill2": "11",
+    "skill3": "17"
+  },
+  {
+    "name": "月光魔棒",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_096_icon.png",
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "10"
+  },
+  {
+    "name": "聖誕魔術師魔杖",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_106_icon.png",
+    "skill1": "0",
+    "skill2": "4",
+    "skill3": "18"
+  },
+  {
+    "name": "雪球製造機",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_evt_126_icon.png",
+    "skill1": "1",
+    "skill2": "4",
+    "skill3": "15"
+  },
+  {
+    "name": "古代神權杖",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_gr_016_icon.png",
+    "skill1": "0",
+    "skill2": "8",
+    "skill3": "21"
+  },
+  {
+    "name": "古代神連枷",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_wpn_gr_026_icon.png",
+    "skill1": "2",
+    "skill2": "15",
+    "skill3": "22"
   },
   {
     "name": "6星武器",
