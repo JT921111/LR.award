@@ -1,5 +1,26 @@
 [
   {
+    "name": "無花果的葉子",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_2204_amr_27_icon.png",
+    "skill1": "4",
+    "skill2": "18",
+    "skill3": "20"
+  },
+  {
+    "name": "小次郎的和服外套",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_2204_amr_07_icon.png",
+    "skill1": "13",
+    "skill2": "16",
+    "skill3": "19"
+  },
+  {
+    "name": "索爾的手套",
+    "link": "https://rangers.lerico.net/res/gear_icon/eq_2204_amr_17_icon.png",
+    "skill1": "4",
+    "skill2": "16",
+    "skill3": "20"
+  },
+  {
     "name": "冴羽獠的夾克",
     "link": "https://rangers.lerico.net/res/gear_icon/eq_ch_amr_07_icon.png",
     "skill1": "9",
