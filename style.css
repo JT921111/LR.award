@@ -362,7 +362,7 @@ td:nth-of-type(10) > img, td:nth-of-type(14) > img {
 }
 
 .extraitem3::before {
-  content: "新手教學";
+  content: "新手教學與其他資源";
 }
 
 .extraitem4::before {
