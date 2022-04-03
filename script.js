@@ -18,6 +18,10 @@ $('.selection').click(function () {
   }
 })
 
+$('.backtothetop').on('click', function () {
+  $('html, body').animate({ scrollTop: 0 }, 300);
+  return false;
+})
 
 function sortTable(n) {
   if (n == 1 || n == 2 || n == 12) {
