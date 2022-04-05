@@ -1,4 +1,13 @@
 $(document).ready(function () {
+  // async function rangers() {
+  //   const data = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/allrangers.json");
+  //   const getdata = await data.json();
+  //   $.each(getdata, function (i) {
+  //     $('.rangers-list').append('<div class="rangerchoosen" title="' + getdata[i].name + '" imglink="' + getdata[i].link + '" p140-1="' + getdata[i].pa1 + '" p140-2="' + getdata[i].pa2 + '" p140-3="' + getdata[i].pa3 + '" p140-4="' + getdata[i].pa4 + '" p140-5="' + getdata[i].pa5 + '" p140-6="' + getdata[i].pa6 + '" p140-7="' + getdata[i].pa7 + '" p140-8="' + getdata[i].pa8 + '" p140-9="' + getdata[i].pa9 + '" p140-10="' + getdata[i].pa10 + '" p140-11="' + getdata[i].pa11 + '" p140-12="' + getdata[i].pa12 + '" p140-13="' + getdata[i].pa13 + '" p140-14="' + getdata[i].pa14 + '" p140-15="' + getdata[i].pa15 + '" p140-16="' + getdata[i].pa16 + '" p140-17="' + getdata[i].pa17 + '" p140-18="' + getdata[i].pa18 + '" p240-1="' + getdata[i].pb1 + '" p240-2="' + getdata[i].pb2 + '" p240-3="' + getdata[i].pb3 + '" p240-4="' + getdata[i].pb4 + '" p240-5="' + getdata[i].pb5 + '" p240-6="' + getdata[i].pb6 + '" p240-7="' + getdata[i].pb7 + '" p240-8="' + getdata[i].pb8 + '" p240-9="' + getdata[i].pb9 + '" p240-10="' + getdata[i].pb10 + '" p240-11="' + getdata[i].pb11 + '" p240-12="' + getdata[i].pb12 + '" p240-13="' + getdata[i].pb13 + '" p240-14="' + getdata[i].pb14 + '" p240-15="' + getdata[i].pb15 + '" p240-16="' + getdata[i].pb16 + '" p240-17="' + getdata[i].pb17 + '" p240-18="' + getdata[i].pb18 + '"></div>')
+  //   })
+  //   $('.ranger-list').append('<div class="extra-spacing"></div>');
+  // }
+
   async function weapon() {
     $('.wp-list').append('<h2>7星</h2>')
     const data = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/weapon7.json");
@@ -14,7 +23,7 @@ $(document).ready(function () {
     })
     $('.wp-list').append('<div class="extra-spacing"></div>');
   }
-  
+
   async function shield() {
     $('.sh-list').append('<h2>7星</h2>')
     const data = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/shield7.json");
@@ -30,7 +39,7 @@ $(document).ready(function () {
     })
     $('.sh-list').append('<div class="extra-spacing"></div>');
   }
-  
+
   async function accessory() {
     $('.ac-list').append('<h2>7星</h2>')
     const data = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/accessory7.json");
@@ -47,6 +56,8 @@ $(document).ready(function () {
     $('.ac-list').append('<div class="extra-spacing"></div>');
   }
 
+  // rangers();
+
   weapon();
 
   shield();
@@ -56,7 +67,7 @@ $(document).ready(function () {
   const powcal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
   function collectdata() {
-    $.each(powcal, function(i) {
+    $.each(powcal, function (i) {
       var j = i + 1;
       powcal[i] = $('#d' + j).val();
     })
@@ -157,11 +168,17 @@ $(document).ready(function () {
     $('.data-list li:nth-of-type(28) span').text(pc);
     pc = parseInt(parseFloat(powercal[30]));
     $('.data-list li:nth-of-type(29) span').text(pc);
-    console.log($('.data-list li:nth-of-type(27) span').text());
     $('.main-cal div:nth-of-type(2)').text($('.data-list li:nth-of-type(27) span').text());
     $('.main-cal div:nth-of-type(4)').text(parseInt((parseInt($('.data-list li:nth-of-type(1) span').text()) + parseInt($('.data-list li:nth-of-type(2) span').text())) * parseInt($('.data-list li:nth-of-type(6) span').text()) / 1000 * 3));
     $('.main-cal div:nth-of-type(6)').text($('.data-list li:nth-of-type(3) span').text());
     $('.main-cal div:nth-of-type(8)').text(parseInt($('.data-list li:nth-of-type(4) span').text()) + parseInt($('.data-list li:nth-of-type(5) span').text()));
+    if (rangercalc != "0") {
+      $('.final-ranger').text('');
+      $('.final-ranger').css('background-image', 'url(' + rangercalc + ')');
+    } else {
+      $('.final-ranger').text('自訂');
+      $('.final-ranger').css('background-image', 'none');
+    }
   }
 
   function resetequip() {
@@ -231,6 +248,9 @@ $(document).ready(function () {
     }
   })
 
+  let rangerdataadd = "0"
+  let rangercalc = "0";
+  var lvls = 140;
   const powerup = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
   const powercal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] //length 33
   //0 物攻%
@@ -266,6 +286,47 @@ $(document).ready(function () {
   //30 魔反
   //31 技能冷卻
   //32 擊退
+
+  function dataaddin() {
+    if (rangercalc != "0") {
+      for (var i = 1; i <= 18; i++) {
+        $('#d' + i).val(rangerdataadd.attr('p' + lvls + '-' + i));
+      }
+    } else {
+      for (var i = 1; i <= 18; i++) {
+        $('#d' + i).val(0);
+      }
+    }
+  }
+
+  $(document).on('click', '.lvl-change', function () {
+    switch (lvls) {
+      case 140:
+        lvls = 240;
+        $('.lvl-change').text('Lv.240');
+        $('.lvl-change').css('background-color', 'hsl(10, 100%, 43%)');
+        break;
+      case 240:
+        lvls = 140;
+        $('.lvl-change').text('Lv.140');
+        $('.lvl-change').css('background-color', 'hsl(50, 100%, 56%)');
+        break;
+    }
+    dataaddin();
+  })
+
+  $(document).on('click', '.ranger-list > div', function () {
+    $('.ranger-list > div').removeClass('choose');
+    $(this).addClass('choose');
+    rangerdataadd = $(this)
+    if ($(this).hasClass('rangersdefault')) {
+      rangercalc = "0";
+      dataaddin();
+    } else {
+      rangercalc = $(this).attr('imglink');
+      dataaddin();
+    }
+  })
 
   $(document).on('click', '.wp-list > img', function () {
     $('.wp-list > img').removeClass('choose');
@@ -492,7 +553,7 @@ $(document).ready(function () {
       }
     }
   })
-  
+
   $(document).on('click', '.ac-list > img', function () {
     $('.ac-list > img').removeClass('choose');
     $(this).addClass('choose');

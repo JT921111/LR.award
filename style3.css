@@ -223,11 +223,17 @@ body {
 }
 
 .ranger-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  overflow-y: scroll;
   position: absolute;
   top: 0;
   left: 0;
   width: 50%;
-  height: 100%;
+  height: 80%;
   background: white;
 }
 
@@ -238,6 +244,35 @@ body {
   width: min(50%, 36vh);
   transform: translate(-50%, -50%);
   opacity: 0.3;
+}
+
+.rangersdefault, .ranger-list > div {
+  margin: 0.8%;
+  width: 6vw;
+  height: 6vw;
+  border: 3px solid black;
+  border-radius: 30%;
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 6vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.lvl-change {
+  position: absolute;
+  top: 89%;
+  left: 25%;
+  margin: 0.8%;
+  width: 24%;
+  height: 6vw;
+  border: 3px solid black;
+  border-radius: 3vw;
+  transform: translate(-50%, -50%);
+  font-size: 2.4rem;
+  text-align: center;
+  line-height: 6vw;
+  background-color: hsl(50, 100%, 56%);
 }
 
 .data {
@@ -323,7 +358,7 @@ body {
   overflow-y: scroll;
 }
 
-.wp-list::-webkit-scrollbar, .sh-list::-webkit-scrollbar, .ac-list::-webkit-scrollbar {
+.wp-list::-webkit-scrollbar, .sh-list::-webkit-scrollbar, .ac-list::-webkit-scrollbar, .ranger-list::-webkit-scrollbar {
   background: transparent;
 }
 
@@ -334,14 +369,14 @@ body {
   line-height: 2.5rem;
 }
 
-.wp-list > img, .sh-list > img, .ac-list> img {
+.wp-list > img, .sh-list > img, .ac-list > img {
   margin: 0.8%;
   width: 10%;
   border: 3px solid black;
   border-radius: 30%;
 }
 
-.wp-list > img.choose, .sh-list > img.choose, .ac-list > img.choose {
+.wp-list > img.choose, .sh-list > img.choose, .ac-list > img.choose, .ranger-list > div.choose {
   background:hsl(66, 100%, 53%)
 }
 
@@ -390,6 +425,11 @@ body {
   width: calc(var(--height) * 0.4);
   height: calc(var(--height) * 0.4);
   background-color: #fff;
+  font-size: 4rem;
+  text-align: center;
+  line-height: calc(var(--height) * 0.4);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .main-cal {
