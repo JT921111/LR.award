@@ -246,7 +246,7 @@ body {
   opacity: 0.3;
 }
 
-.rangersdefault, .ranger-list > div {
+.rangersdefault, .ranger-list > .rangerchoosen {
   margin: 0.8%;
   width: 6vw;
   height: 6vw;
@@ -257,6 +257,10 @@ body {
   line-height: 6vw;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.ranger-list > div.choose {
+  background-color: hsl(66, 100%, 53%);
 }
 
 .lvl-change {
@@ -292,6 +296,18 @@ body {
 .data::-webkit-scrollbar {
   background: transparent;
   width: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vw;
+  background: red;
+  font-size: 4rem;
+  text-align: center;
+  line-height: 10vw;
 }
 
 .data > h1 {
@@ -376,7 +392,7 @@ body {
   border-radius: 30%;
 }
 
-.wp-list > img.choose, .sh-list > img.choose, .ac-list > img.choose, .ranger-list > div.choose {
+.wp-list > img.choose, .sh-list > img.choose, .ac-list > img.choose {
   background:hsl(66, 100%, 53%)
 }
 
