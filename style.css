@@ -8,6 +8,7 @@
   font-size: 1.5vw;
   user-select: none;
   color: white;
+  font-weight: 600;
 }
 
 body {
@@ -64,7 +65,7 @@ body::-webkit-scrollbar-thumb:hover {
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(180deg);
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .select-list {
@@ -94,7 +95,7 @@ h1, h2 {
   width: 100vw;
   height: 3vw;
   font-size: 3vw;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .selection {
@@ -104,7 +105,7 @@ h1, h2 {
   text-shadow: none;
   border-radius: 1vw;
   font-family: DFKai-SB;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
   color: #000;
 }
