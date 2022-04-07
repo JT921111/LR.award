@@ -1,22 +1,25 @@
-$('.selection').click(function () {
-  if ($(this).hasClass('point')) {
-    $(this).addClass('uncheck').removeClass('check').removeClass('point');
-  } else if ($(this).hasClass('check')) {
-    if ($(this).hasClass('ranger')) {
-      $(this).addClass('point');
-    } else {
-      $(this).addClass('uncheck').removeClass('check');
-    }
-  } else if ($(this).hasClass('uncheck')) {
-    $(this).addClass('check').removeClass('uncheck');
-  } else if ($(this).hasClass('all')) {
-    if ($(this).hasClass('mode')) {
-      $('.mode.uncheck').addClass('check').removeClass('uncheck');
-    } else if ($(this).hasClass('drop')) {
-      $('.drop.check').addClass('uncheck').removeClass('check').removeClass('point');
-    }
-  }
-})
+// $('.selection').click(function () {
+//   if ($(this).hasClass('point')) {
+//     $(this).addClass('uncheck').removeClass('check').removeClass('point');
+//   } else if ($(this).hasClass('check')) {
+//     if ($(this).hasClass('ranger')) {
+//       $(this).addClass('point');
+//     } else if ($('.mode.check').length == 5) {
+//       $('.mode.check').addClass('uncheck').removeClass('check');
+//       $(this).addClass('check').removeClass('uncheck');
+//     } else {
+//       $(this).addClass('uncheck').removeClass('check');
+//     }
+//   } else if ($(this).hasClass('uncheck')) {
+//     $(this).addClass('check').removeClass('uncheck');
+//   } else if ($(this).hasClass('all')) {
+//     if ($(this).hasClass('mode')) {
+//       $('.mode.uncheck').addClass('check').removeClass('uncheck');
+//     } else if ($(this).hasClass('drop')) {
+//       $('.drop.check').addClass('uncheck').removeClass('check').removeClass('point');
+//     }
+//   }
+// })
 
 $('.backtothetop').on('click', function () {
   $('html, body').animate({ scrollTop: 0 }, 300);
@@ -59,68 +62,62 @@ function sortTable(n) {
         }
       }
     }
-  }// else {
-    // var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-    // table = document.getElementById("AllList");
-    // switching = true;
-    // dir = "asc";
-    // while (switching) {
-    //   switching = false;
-    //   rows = table.rows;
-    //   for (i = 2; i < (rows.length - 1); i++) {
-    //     shouldSwitch = false;
-    //     x = rows[i].getElementsByTagName("td")[n];
-    //     y = rows[i + 1].getElementsByTagName("td")[n];
-    //     if (dir == "asc") {
-    //       if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-    //         shouldSwitch = true;
-    //         break;
-    //       }
-    //     } else if (dir == "desc") {
-    //       if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-    //         shouldSwitch = true;
-    //         break;
-    //       }
-    //     }
-    //   }
-    //   if (shouldSwitch) {
-    //     rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-    //     switching = true;
-    //     switchcount++;
-    //   } else {
-    //     if (switchcount == 0 && dir == "asc") {
-    //       dir = "desc";
-    //       switching = true;
-    //     }
-    //   }
-    // }
-  //}
+  }
 }
 
 const modefilter = [1, 1, 1, 1, 1];
 const dropfilter = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 function filterList(n) {
+  if ($(this).hasClass('point')) {
+    $(this).addClass('uncheck').removeClass('check').removeClass('point');
+  } else if ($(this).hasClass('check')) {
+    if ($(this).hasClass('ranger')) {
+      $(this).addClass('point');
+    } else if ($('.mode.check').length == 5) {
+      $('.mode.check').addClass('uncheck').removeClass('check');
+      $(this).addClass('check').removeClass('uncheck');
+    } else {
+      $(this).addClass('uncheck').removeClass('check');
+    }
+  } else if ($(this).hasClass('uncheck')) {
+    $(this).addClass('check').removeClass('uncheck');
+  } else if ($(this).hasClass('all')) {
+    if ($(this).hasClass('mode')) {
+      $('.mode.uncheck').addClass('check').removeClass('uncheck');
+    } else if ($(this).hasClass('drop')) {
+      $('.drop.check').addClass('uncheck').removeClass('check').removeClass('point');
+    }
+  }
   if (n < 10) {
     if (n == 0) {
+      $('.mode.uncheck').addClass('check').removeClass('uncheck');
       modefilter[0] = 1;
       modefilter[1] = 1;
       modefilter[2] = 1;
       modefilter[3] = 1;
       modefilter[4] = 1;
     } else {
-      switch (modefilter[n - 1]) {
-        case 0:
-          modefilter[n - 1] = 1;
-          break;
-        case 1:
-          modefilter[n - 1] = 0;
-          break;
-
+      if ($('.mode.check').length == 5) {
+        $('.mode.check').addClass('uncheck').removeClass('check');
+        $('.mode:nth-of-type(' + (n + 1) + ')').addClass('check').removeClass('uncheck');
+      } else if ($('.mode:nth-of-type(' + (n + 1) + ')').hasClass('uncheck')) {
+        $('.mode:nth-of-type(' + (n + 1) + ')').addClass('check').removeClass('uncheck');
+      } else {
+        $('.mode:nth-of-type(' + (n + 1) + ')').addClass('uncheck').removeClass('check');
+      }
+      for (var i = 2; i <= 6; i++) {
+        console.log($('.mode:nth-of-type(' + i + ')').attr('class'));
+        if ($('.mode:nth-of-type(' + i + ')').hasClass('check')) {
+          modefilter[i - 2] = 1;
+        } else {
+          modefilter[i - 2] = 0;
+        }
       }
     }
   } else {
     if (n == 10) {
+      $('.drop.check').addClass('uncheck').removeClass('check').removeClass('point');
       dropfilter[0] = 0;
       dropfilter[1] = 0;
       dropfilter[2] = 0;
@@ -133,16 +130,20 @@ function filterList(n) {
     } else {
       switch (dropfilter[n - 11]) {
         case 0:
+          $('.drop:nth-of-type(' + (n - 9) + ')').addClass('check').removeClass('uncheck');
           dropfilter[n - 11] = 1;
           break;
         case 1:
           if (n == 11) {
+            $('.drop:nth-of-type(' + (n - 9) + ')').addClass('point');
             dropfilter[n - 11] = 2;
           } else {
+            $('.drop:nth-of-type(' + (n - 9) + ')').addClass('uncheck').removeClass('check');
             dropfilter[n - 11] = 0;
           }
           break;
         case 2:
+          $('.drop:nth-of-type(' + (n - 9) + ')').addClass('uncheck').removeClass('check').removeClass('point');
           dropfilter[n - 11] = 0;
           break;
       }
