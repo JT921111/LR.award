@@ -8,7 +8,7 @@
   font-size: 1.5vw;
   user-select: none;
   color: white;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 body {
@@ -105,7 +105,6 @@ h1, h2 {
   text-shadow: none;
   border-radius: 1vw;
   font-family: DFKai-SB;
-  font-weight: 700;
   text-align: center;
   color: #000;
 }
