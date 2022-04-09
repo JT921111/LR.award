@@ -3,7 +3,7 @@ $(document).ready(function () {
   //   const data = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/allrangers.json");
   //   const getdata = await data.json();
   //   $.each(getdata, function (i) {
-  //     $('.rangers-list').append('<div class="rangerchoosen" rgtitle="' + getdata[i].name + '" imglink="' + getdata[i].link + '" p140-1="' + getdata[i].pa1 + '" p140-2="' + getdata[i].pa2 + '" p140-3="' + getdata[i].pa3 + '" p140-4="' + getdata[i].pa4 + '" p140-5="' + getdata[i].pa5 + '" p140-6="' + getdata[i].pa6 + '" p140-7="' + getdata[i].pa7 + '" p140-8="' + getdata[i].pa8 + '" p140-9="' + getdata[i].pa9 + '" p140-10="' + getdata[i].pa10 + '" p140-11="' + getdata[i].pa11 + '" p140-12="' + getdata[i].pa12 + '" p140-13="' + getdata[i].pa13 + '" p140-14="' + getdata[i].pa14 + '" p140-15="' + getdata[i].pa15 + '" p140-16="' + getdata[i].pa16 + '" p140-17="' + getdata[i].pa17 + '" p140-18="' + getdata[i].pa18 + '" p240-1="' + getdata[i].pb1 + '" p240-2="' + getdata[i].pb2 + '" p240-3="' + getdata[i].pb3 + '" p240-4="' + getdata[i].pb4 + '" p240-5="' + getdata[i].pb5 + '" p240-6="' + getdata[i].pb6 + '" p240-7="' + getdata[i].pb7 + '" p240-8="' + getdata[i].pb8 + '" p240-9="' + getdata[i].pb9 + '" p240-10="' + getdata[i].pb10 + '" p240-11="' + getdata[i].pb11 + '" p240-12="' + getdata[i].pb12 + '" p240-13="' + getdata[i].pb13 + '" p240-14="' + getdata[i].pb14 + '" p240-15="' + getdata[i].pb15 + '" p240-16="' + getdata[i].pb16 + '" p240-17="' + getdata[i].pb17 + '" p240-18="' + getdata[i].pb18 + '"></div>')
+  //     $('.rangers-list').append('<div class="rangerchoosen" rgtitle="' + getdata[i].name + '" imglink="' + getdata[i].link + '" p140-1="' + getdata[i].pa1 + '" p140-2="' + getdata[i].pa2 + '" p140-3="' + getdata[i].pa3 + '" p140-4="' + getdata[i].pa4 + '" p140-5="' + getdata[i].pa5 + '" p140-6="' + getdata[i].pa6 + '" p140-7="' + getdata[i].pa7 + '" p140-8="' + getdata[i].pa8 + '" p140-9="' + getdata[i].pa9 + '" p140-10="' + getdata[i].pa10 + '" p140-11="' + getdata[i].pa11 + '" p140-12="' + getdata[i].pa12 + '" p140-13="' + getdata[i].pa13 + '" p140-14="' + getdata[i].pa14 + '" p140-15="' + getdata[i].pa15 + '" p140-16="' + getdata[i].pa16 + '" p140-17="' + getdata[i].pa17 + '" p140-18="' + getdata[i].pa18 + '" p240-1="' + getdata[i].pb1 + '" p240-2="' + getdata[i].pb2 + '" p240-3="' + getdata[i].pb3 + '" p240-4="' + getdata[i].pb4 + '" p240-5="' + getdata[i].pb5 + '" p240-17="' + getdata[i].pb17 + '"></div>')
   //   })
   //   $('.rangerchoosen').each(function () {
   //     let t = $(this).attr('imglink');
@@ -294,7 +294,11 @@ $(document).ready(function () {
   function dataaddin() {
     if (rangercalc != "0") {
       for (var i = 1; i <= 18; i++) {
-        $('#d' + i).val(rangerdataadd.attr('p' + lvls + '-' + i));
+        if (i <= 5 || i == 17) {
+          $('#d' + i).val(rangerdataadd.attr('p' + lvls + '-' + i));
+        } else {
+          $('#d' + i).val(rangerdataadd.attr('p140-' + i));
+        }
       }
     } else {
       for (var i = 1; i <= 18; i++) {
