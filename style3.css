@@ -235,7 +235,6 @@ body {
   width: 50%;
   height: 80%;
   background: white;
-  z-index: -2;
 }
 
 .ranger-figure {
@@ -245,7 +244,6 @@ body {
   width: min(50%, 36vh);
   transform: translate(-50%, -50%);
   opacity: 0.3;
-  z-index: -1;
 }
 
 .rangersdefault, .ranger-list > .rangerchoosen {
@@ -261,6 +259,7 @@ body {
   background-size: 5.2vw;
   background-position-x: center;
   background-position-y: 0.4vw;
+  z-index: 5;
 }
 
 .ranger-list > div.choose {
