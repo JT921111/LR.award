@@ -182,7 +182,7 @@ $(document).ready(function () {
     $('.data-list li:nth-of-type(25) span').text(pc);
     pc = Math.max(parseInt(parseFloat(powcal[16]) * (100 - parseFloat(powercal[19])) / 10 + 0.5) / 10, 1.3);
     $('.data-list li:nth-of-type(26) span').text(pc);
-    pc = parseInt(parseFloat(powcal[17]) * (Math.max((100 - parseFloat(powercal[20])) / 100, 0.49)) + 0.5);
+    pc = parseInt(parseFloat(powcal[17]) * (100 - parseFloat(powercal[20]) / 100) + 0.5);
     $('.data-list li:nth-of-type(27) span').text(pc);
     pc = parseInt(parseFloat(powercal[29]) + 0.5);
     $('.data-list li:nth-of-type(28) span').text(pc);
