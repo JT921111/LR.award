@@ -99,6 +99,7 @@ body {
 
 .container.step1.down {
   animation: step1 1s ease-in-out forwards;
+  top: 0;
 }
 
 @keyframes step1 {
@@ -112,10 +113,12 @@ body {
 
 .container.step2.down {
   animation: step2 1s ease-in-out forwards;
+  top: -100%;
 }
 
 .container.step1.up {
   animation: step2r 1s ease-in-out forwards;
+  top: -100%;
 }
 
 @keyframes step2 {
@@ -138,10 +141,12 @@ body {
 
 .container.step3.down {
   animation: step3 1s ease-in-out forwards;
+  top: -200%;
 }
 
 .container.step2.up {
   animation: step3r 1s ease-in-out forwards;
+  top: -200%;
 }
 
 @keyframes step3 {
@@ -164,10 +169,12 @@ body {
 
 .container.step4.down {
   animation: step4 1s ease-in-out forwards;
+  top: -300%;
 }
 
 .container.step3.up {
   animation: step4r 1s ease-in-out forwards;
+  top: -300%;
 }
 
 @keyframes step4 {
@@ -190,10 +197,12 @@ body {
 
 .container.step5.down {
   animation: step5 1s ease-in-out forwards;
+  top: -400%;
 }
 
 .container.step4.up {
   animation: step5r 1s ease-in-out forwards;
+  top: -400%;
 }
 
 @keyframes step5 {
@@ -256,9 +265,8 @@ body {
   text-align: center;
   line-height: 6vw;
   background-repeat: no-repeat;
-  background-size: 5.2vw;
-  background-position-x: center;
-  background-position-y: 0.4vw;
+  background-size: 4vw;
+  background-position: center;
   z-index: 5;
 }
 
@@ -422,6 +430,27 @@ header {
   height: 2rem;
   width: 35%;
   text-align: center;
+}
+
+.input-col > select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: 2rem;
+  width: 35%;
+  font-family: DFKai-SB;
+  font-size: min(1.5vw, calc(1.5vh * 1.78));
+  font-weight: 700;
+  text-align: center;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+option {
+  background:hsl(187, 94%, 64%)
 }
 
 .input-col > input {

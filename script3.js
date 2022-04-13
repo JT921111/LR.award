@@ -17,13 +17,13 @@ $(document).ready(function () {
     const data = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/weapon7.json");
     const getdata = await data.json();
     $.each(getdata, function (i) {
-      $('.wp-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '" alt="圖片資源缺失">')
+      $('.wp-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '" star="7" alt="圖片資源缺失">')
     })
     $('.wp-list').append('<h2>6星</h2>')
     const data2 = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/weapon6.json");
     const getdata2 = await data2.json();
     $.each(getdata2, function (i) {
-      $('.wp-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '" alt="圖片資源缺失">')
+      $('.wp-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '" star="6" alt="圖片資源缺失">')
     })
     $('.wp-list').append('<div class="extra-spacing"></div>');
   }
@@ -33,13 +33,13 @@ $(document).ready(function () {
     const data = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/shield7.json");
     const getdata = await data.json();
     $.each(getdata, function (i) {
-      $('.sh-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '" alt="圖片資源缺失">')
+      $('.sh-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '" star="7" alt="圖片資源缺失">')
     })
     $('.sh-list').append('<h2>6星</h2>')
     const data2 = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/shield6.json");
     const getdata2 = await data2.json();
     $.each(getdata2, function (i) {
-      $('.sh-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '" alt="圖片資源缺失">')
+      $('.sh-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '" star="6" alt="圖片資源缺失">')
     })
     $('.sh-list').append('<div class="extra-spacing"></div>');
   }
@@ -49,13 +49,13 @@ $(document).ready(function () {
     const data = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/accessory7.json");
     const getdata = await data.json();
     $.each(getdata, function (i) {
-      $('.ac-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '" alt="圖片資源缺失">')
+      $('.ac-list').append('<img src="' + getdata[i].link + '" data-promote-1="' + getdata[i].skill1 + '" data-promote-2="' + getdata[i].skill2 + '" data-promote-3="' + getdata[i].skill3 + '" title="' + getdata[i].name + '" star="7" alt="圖片資源缺失">')
     })
     $('.ac-list').append('<h2>6星</h2>')
     const data2 = await fetch("https://raw.githubusercontent.com/JT921111/LR.award/main/api/accessory6.json");
     const getdata2 = await data2.json();
     $.each(getdata2, function (i) {
-      $('.ac-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '" alt="圖片資源缺失">')
+      $('.ac-list').append('<img src="' + getdata2[i].link + '" data-promote-1="' + getdata2[i].skill1 + '" data-promote-2="' + getdata2[i].skill2 + '" data-promote-3="' + getdata2[i].skill3 + '" title="' + getdata2[i].name + '" star="6" alt="圖片資源缺失">')
     })
     $('.ac-list').append('<div class="extra-spacing"></div>');
   }
@@ -81,18 +81,24 @@ $(document).ready(function () {
     for (var i = 1; i <= 3; i++) {
       powercal[powerup[i - 1]] += parseFloat($('.weapon .up' + i).val());
     }
+    powerup4[0] = $('.wp-sel option:selected').val();
+    power4[0] = $('.4up1').val();
   }
 
   function addequips() {
     for (var i = 4; i <= 6; i++) {
       powercal[powerup[i - 1]] += parseFloat($('.shield .up' + i).val());
     }
+    powerup4[1] = $('.sh-sel option:selected').val();
+    power4[1] = $('.4up2').val();
   }
 
   function addequipa() {
     for (var i = 7; i <= 9; i++) {
       powercal[powerup[i - 1]] += parseFloat($('.accessory .up' + i).val());
     }
+    powerup4[2] = $('.ac-sel option:selected').val();
+    power4[2] = $('.4up3').val();
   }
 
   function removeequipw() {
@@ -113,64 +119,74 @@ $(document).ready(function () {
     }
   }
 
+  function allpowerup() {
+    for (var i = 0; i < 3; i++){
+      if(powerup4[i] != -1)
+      powercal4[powerup4[i]] = Math.max(parseFloat(power4[i]), powercal4[powerup4[i]]);
+    }
+    for (var i = 0; i < powercal.length; i++){
+      powercal[i] += powercal4[i];
+    }
+  }
+
   function equipcal() {
-    let pc = parseInt(parseFloat(powcal[0]) * (100 + parseFloat(powercal[0]) + parseFloat(powercal[23])) / 100 + parseFloat(powercal[1]));
+    let pc = parseInt(parseFloat(powcal[0]) * (100 + parseFloat(powercal[0]) + parseFloat(powercal[23])) / 100 + parseFloat(powercal[1]) + 0.5);
     $('.data-list li:nth-of-type(1) span').text(pc);
-    pc = parseInt(parseFloat(powcal[1]) * (100 + parseFloat(powercal[2]) + parseFloat(powercal[23])) / 100 + parseFloat(powercal[3]));
+    pc = parseInt(parseFloat(powcal[1]) * (100 + parseFloat(powercal[2]) + parseFloat(powercal[23])) / 100 + parseFloat(powercal[3]) + 0.5);
     $('.data-list li:nth-of-type(2) span').text(pc);
-    pc = parseInt(parseFloat(powcal[2]) * (100 + parseFloat(powercal[4])) / 100 + parseFloat(powercal[5]));
+    pc = parseInt(parseFloat(powcal[2]) * (100 + parseFloat(powercal[4])) / 100 + parseFloat(powercal[5]) + 0.5);
     $('.data-list li:nth-of-type(3) span').text(pc);
-    pc = parseInt(parseFloat(powcal[3]) + parseFloat(powercal[6]));
+    pc = parseInt(parseFloat(powcal[3]) + parseFloat(powercal[6]) + 0.5);
     $('.data-list li:nth-of-type(4) span').text(pc);
-    pc = parseInt(parseFloat(powcal[4]) + parseFloat(powercal[7]));
+    pc = parseInt(parseFloat(powcal[4]) + parseFloat(powercal[7]) + 0.5);
     $('.data-list li:nth-of-type(5) span').text(pc);
-    pc = parseInt(parseFloat(powcal[5]) * (100 + parseFloat(powercal[8])) / 100);
+    pc = parseInt(parseFloat(powcal[5]) * (100 + parseFloat(powercal[8])) / 100 + 0.5);
     $('.data-list li:nth-of-type(6) span').text(pc);
-    pc = parseInt(parseFloat(powcal[6]) + parseFloat(powercal[9]));
+    pc = parseInt(parseFloat(powcal[6]) + parseFloat(powercal[9]) + 0.5);
     $('.data-list li:nth-of-type(7) span').text(pc);
-    pc = parseInt(parseFloat(powcal[7]) * (100 + parseFloat(powercal[10])) / 100);
+    pc = parseInt(parseFloat(powcal[7]) * (100 + parseFloat(powercal[10])) / 100 + 0.5);
     $('.data-list li:nth-of-type(8) span').text(pc);
-    pc = parseInt(parseFloat(powcal[8]) + parseFloat(powercal[11]));
+    pc = parseInt(parseFloat(powcal[8]) + parseFloat(powercal[11]) + 0.5);
     $('.data-list li:nth-of-type(9) span').text(pc);
-    pc = parseInt(parseFloat(powcal[9]) + parseFloat(powercal[12]));
+    pc = parseInt(parseFloat(powcal[9]) + parseFloat(powercal[12]) + 0.5);
     $('.data-list li:nth-of-type(10) span').text(pc);
-    pc = parseInt(parseFloat(powercal[24]));
+    pc = parseInt(parseFloat(powercal[24]) + 0.5);
     $('.data-list li:nth-of-type(11) span').text(pc);
-    pc = parseInt(parseFloat(powcal[10]) + parseFloat(powercal[13]));
+    pc = parseInt(parseFloat(powcal[10]) + parseFloat(powercal[13]) + 0.5);
     $('.data-list li:nth-of-type(12) span').text(pc);
-    pc = parseInt(parseFloat(powcal[11]) + parseFloat(powercal[14]));
+    pc = parseInt(parseFloat(powcal[11]) + parseFloat(powercal[14]) + 0.5);
     $('.data-list li:nth-of-type(13) span').text(pc);
-    pc = parseInt(parseFloat(powercal[26]));
+    pc = parseInt(parseFloat(powercal[26]) + 0.5);
     $('.data-list li:nth-of-type(14) span').text(pc);
-    pc = parseInt(parseFloat(powcal[12]) + parseFloat(powercal[15]));
+    pc = parseInt(parseFloat(powcal[12]) + parseFloat(powercal[15]) + 0.5);
     $('.data-list li:nth-of-type(15) span').text(pc);
-    pc = parseInt(parseFloat(powercal[25]));
+    pc = parseInt(parseFloat(powercal[25]) + 0.5);
     $('.data-list li:nth-of-type(16) span').text(pc);
-    pc = parseInt(parseFloat(powcal[13]) + parseFloat(powercal[16]));
+    pc = parseInt(parseFloat(powcal[13]) + parseFloat(powercal[16]) + 0.5);
     $('.data-list li:nth-of-type(17) span').text(pc);
-    pc = parseInt(parseFloat(powcal[14]) + parseFloat(powercal[17]));
+    pc = parseInt(parseFloat(powcal[14]) + parseFloat(powercal[17]) + 0.5);
     $('.data-list li:nth-of-type(18) span').text(pc);
-    pc = parseInt(parseFloat(powercal[27]));
+    pc = parseInt(parseFloat(powercal[27]) + 0.5);
     $('.data-list li:nth-of-type(19) span').text(pc);
-    pc = parseInt(parseFloat(powcal[15]) + parseFloat(powercal[18]));
+    pc = parseInt(parseFloat(powcal[15]) + parseFloat(powercal[18]) + 0.5);
     $('.data-list li:nth-of-type(20) span').text(pc);
-    pc = parseInt(parseFloat(powercal[21]));
+    pc = parseInt(parseFloat(powercal[21]) + 0.5);
     $('.data-list li:nth-of-type(21) span').text(pc);
-    pc = parseInt(parseFloat(powercal[22]));
+    pc = parseInt(parseFloat(powercal[22]) + 0.5);
     $('.data-list li:nth-of-type(22) span').text(pc);
-    pc = parseInt(parseFloat(powercal[32]));
+    pc = parseInt(parseFloat(powercal[32]) + 0.5);
     $('.data-list li:nth-of-type(23) span').text(pc);
-    pc = parseInt(parseFloat(powercal[28]));
+    pc = parseInt(parseFloat(powercal[28]) + 0.5);
     $('.data-list li:nth-of-type(24) span').text(pc);
-    pc = parseInt(parseFloat(powercal[31]));
+    pc = parseInt(parseFloat(powercal[31]) + 0.5);
     $('.data-list li:nth-of-type(25) span').text(pc);
-    pc = Math.max(parseInt(parseFloat(powcal[16]) * (100 - parseFloat(powercal[19])) / 10) / 10, 1.3);
+    pc = Math.max(parseInt(parseFloat(powcal[16]) * (100 - parseFloat(powercal[19])) / 10 + 0.5) / 10, 1.3);
     $('.data-list li:nth-of-type(26) span').text(pc);
-    pc = parseInt(parseFloat(powcal[17]) * (100 - parseFloat(powercal[20])) / 100);
+    pc = parseInt(parseFloat(powcal[17]) * (Math.max((100 - parseFloat(powercal[20])) / 100, 0.49)) + 0.5);
     $('.data-list li:nth-of-type(27) span').text(pc);
-    pc = parseInt(parseFloat(powercal[29]));
+    pc = parseInt(parseFloat(powercal[29]) + 0.5);
     $('.data-list li:nth-of-type(28) span').text(pc);
-    pc = parseInt(parseFloat(powercal[30]));
+    pc = parseInt(parseFloat(powercal[30]) + 0.5);
     $('.data-list li:nth-of-type(29) span').text(pc);
     $('.main-cal div:nth-of-type(2)').text($('.data-list li:nth-of-type(27) span').text());
     $('.main-cal div:nth-of-type(4)').text(parseInt((parseInt($('.data-list li:nth-of-type(1) span').text()) + parseInt($('.data-list li:nth-of-type(2) span').text())) * parseInt($('.data-list li:nth-of-type(6) span').text()) / 1000 * 3));
@@ -206,6 +222,7 @@ $(document).ready(function () {
       addequipa();
       $('.container').removeClass('step4 up').addClass('step5 down');
       $('.next').addClass('re');
+      allpowerup();
       equipcal();
     } else if ($('.container').hasClass('step5')) {
       $('.container').removeClass('step5 up').addClass('step1 down');
@@ -255,8 +272,11 @@ $(document).ready(function () {
   let rangerdataadd = "0"
   let rangercalc = "0";
   var lvls = 140;
+  const powerup4 = [-1, -1, -1];
+  const power4 = [0, 0, 0];
+  const powercal4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   const powerup = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
-  const powercal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] //length 33
+  const powercal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; //length 33
   //0 物攻%
   //1 物攻
   //2 魔攻%
@@ -340,6 +360,12 @@ $(document).ready(function () {
   $(document).on('click', '.wp-list > img', function () {
     $('.wp-list > img').removeClass('choose');
     $(this).addClass('choose');
+    if ($(this).attr('star') == "7") {
+      $('.4up1').prop('disabled', false);
+    } else {
+      $('.4up1').val('0');
+      $('.4up1').prop('disabled', true);
+    }
     $('.weapon h4').text($(this).attr('title'));
     powerup[0] = parseFloat($(this).attr('data-promote-1'));
     powerup[1] = parseFloat($(this).attr('data-promote-2'));
@@ -453,6 +479,12 @@ $(document).ready(function () {
   $(document).on('click', '.sh-list > img', function () {
     $('.sh-list > img').removeClass('choose');
     $(this).addClass('choose');
+    if ($(this).attr('star') == "7") {
+      $('.4up2').prop('disabled', false);
+    } else {
+      $('.4up2').val('0');
+      $('.4up2').prop('disabled', true);
+    }
     $('.shield h4').text($(this).attr('title'));
     powerup[3] = parseFloat($(this).attr('data-promote-1'));
     powerup[4] = parseFloat($(this).attr('data-promote-2'));
@@ -566,6 +598,12 @@ $(document).ready(function () {
   $(document).on('click', '.ac-list > img', function () {
     $('.ac-list > img').removeClass('choose');
     $(this).addClass('choose');
+    if ($(this).attr('star') == "7") {
+      $('.4up3').prop('disabled', false);
+    } else {
+      $('.4up3').val('0');
+      $('.4up3').prop('disabled', true);
+    }
     $('.accessory h4').text($(this).attr('title'));
     powerup[6] = parseFloat($(this).attr('data-promote-1'));
     powerup[7] = parseFloat($(this).attr('data-promote-2'));
