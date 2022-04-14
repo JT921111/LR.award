@@ -107,7 +107,6 @@ function filterList(n) {
         $('.mode:nth-of-type(' + (n + 1) + ')').addClass('uncheck').removeClass('check');
       }
       for (var i = 2; i <= 6; i++) {
-        console.log($('.mode:nth-of-type(' + i + ')').attr('class'));
         if ($('.mode:nth-of-type(' + i + ')').hasClass('check')) {
           modefilter[i - 2] = 1;
         } else {
