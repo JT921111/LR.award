@@ -204,7 +204,7 @@ $('.extraitem1').click(function () {
 })
 
 $('.extraitem2').click(function () {
-  window.open("equipment.emulator.html", "_blank");
+  window.open("new.eq.simulator/equipment.emulator.html", "_blank");
 })
 
 $('.extraitem3').click(function () {
