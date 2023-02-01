@@ -274,7 +274,7 @@ $(document).ready(function () {
   }
 
   async function calculate(i) {
-    if (i == 1 || $('.eq-selected').length) {
+    if ($('.rg-selected').length || $('.eq-selected').length) {
       switch (i) {
         case 1:
           $('.ranger').attr('style', $('.rg-selected').attr('style'))
